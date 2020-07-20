@@ -14,7 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+# gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 
 group :development, :test do
