@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recap:</strong>
+  <%= @touchpoint.recap %>
+</p>
+
+<p>
+  <strong>Follow up on:</strong>
+  <%= @touchpoint.follow_up_on %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @touchpoint.source %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @touchpoint.result %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @touchpoint.contact.name %>
+</p>
+
+<%= link_to 'Edit', edit_touchpoint_path(@touchpoint) %> |
+<%= link_to 'Back', touchpoints_path %>

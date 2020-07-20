@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_19_163028) do
+ActiveRecord::Schema.define(version: 2020_07_20_044249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 2020_07_19_163028) do
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
+  create_table "touchpoints", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "recap", null: false
+    t.date "follow_up_on", null: false
+    t.integer "source", default: 0, null: false
+    t.integer "result", default: 0, null: false
+    t.uuid "user_id", null: false
+    t.uuid "contact_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contact_id"], name: "index_touchpoints_on_contact_id"
+    t.index ["user_id"], name: "index_touchpoints_on_user_id"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -38,4 +51,6 @@ ActiveRecord::Schema.define(version: 2020_07_19_163028) do
   end
 
   add_foreign_key "contacts", "users"
+  add_foreign_key "touchpoints", "contacts"
+  add_foreign_key "touchpoints", "users"
 end
