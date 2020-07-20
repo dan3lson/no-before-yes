@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Website</th>
       <th>Email</th>
+      <th>Website</th>
       <th>Phone Number</th>
       <th>Note</th>
       <th colspan="3"></th>
@@ -18,8 +18,8 @@
     <% @contacts.each do |contact| %>
       <tr>
         <td><%= contact.name %></td>
-        <td><%= contact.website %></td>
         <td><%= contact.email %></td>
+        <td><%= contact.website %></td>
         <td><%= contact.phone_number %></td>
         <td><%= contact.note %></td>
         <td><%= link_to 'Show', contact %></td>
