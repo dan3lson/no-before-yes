@@ -1,0 +1,20 @@
+<h1>Dashboard</h1>
+
+<div>
+  Hi, today is <%= today %>.
+</div>
+
+<div>
+	<p>Here's your snapshot for this week:</p>
+	<ul>
+		<li>
+			Number of noes needed: <%= @dashboard.num_noes_needed %>
+		</li>
+		<li>
+			Number of noes so far: <%= @dashboard.num_noes %>
+		</li>
+		<li>
+			Progress: <%= @dashboard.progress %>%
+		</li>
+	</ul>
+</div>

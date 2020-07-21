@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context 'associations' do
-    it { is_expected.to have_many(:contacts).dependent(:destroy) }
-    it { is_expected.to have_many(:touchpoints).dependent(:destroy) }
+    it { is_expected.to have_many(:contacts).dependent(:restrict_with_error) }
+    it { is_expected.to have_many(:touchpoints).dependent(:restrict_with_error) }
   end
 
   context 'validations' do
