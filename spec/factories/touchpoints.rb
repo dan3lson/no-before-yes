@@ -5,17 +5,5 @@ FactoryBot.define do
 
     user
     contact
-
-    trait :yes do
-      result { :yes }
-    end
-
-    trait :email do
-      source { :email }
-    end
-
-    trait :in_person do
-      source { :in_person }
-    end
   end
 end
