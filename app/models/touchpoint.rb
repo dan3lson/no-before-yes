@@ -12,4 +12,8 @@ class Touchpoint < ApplicationRecord
 
   enum source: { phone: 0, email: 1, in_person: 2 }
   enum result: { unknown: 0, no: 1, yes: 2 }
+
+  scope :today, -> {
+    where(created_at: Time.current.beginning_of_day..Time.current.end_of_day)
+  }
 end

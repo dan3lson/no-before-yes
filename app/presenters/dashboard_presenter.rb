@@ -20,6 +20,10 @@ class DashboardPresenter
 		num_noes / num_noes_needed.to_f
 	end
 
+	def num_touchpoints_today
+		touchpoints.today.size
+	end
+
 	private
 
   # TODO: we need to ask (then store) the user about their conversion ratio: how

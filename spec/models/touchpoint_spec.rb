@@ -25,4 +25,8 @@ RSpec.describe Touchpoint, type: :model do
     it { is_expected.to validate_presence_of(:source) }
     it { is_expected.to validate_presence_of(:result) }
   end
+
+  context 'scopes' do
+    describe 'today'
+  end
 end
