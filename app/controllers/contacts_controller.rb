@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: %i[show edit update destroy]
 
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
   def show
@@ -36,7 +36,11 @@ class ContactsController < ApplicationController
   def destroy
     @contact.destroy
 
-    redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+    if @contact.destroyed?
+      redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+    else
+      redirect_to contacts_url, notice: 'Contact was not destroyed (check association restrictions).'
+    end
   end
 
   private
