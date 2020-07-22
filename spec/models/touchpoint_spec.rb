@@ -9,7 +9,7 @@ RSpec.describe Touchpoint, type: :model do
     end
     it do
       should define_enum_for(:result).
-        with_values(%i[no yes]).
+        with_values(%i[unknown no yes]).
         backed_by_column_of_type(:integer)
     end
   end

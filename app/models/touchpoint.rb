@@ -11,5 +11,5 @@ class Touchpoint < ApplicationRecord
   validates :result, presence: true
 
   enum source: { phone: 0, email: 1, in_person: 2 }
-  enum result: { no: 0, yes: 1 }
+  enum result: { unknown: 0, no: 1, yes: 2 }
 end
