@@ -6,4 +6,6 @@ class Contact < ApplicationRecord
   has_many :touchpoints, dependent: :restrict_with_error
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+  scope :by_name, -> { order(:name) }
 end
