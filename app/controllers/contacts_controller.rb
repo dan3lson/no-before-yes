@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: %i[show edit update destroy]
 
   def index
-    @contacts = current_user.contacts
+    @contacts = current_user.contacts.by_name
   end
 
   def show
