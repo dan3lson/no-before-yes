@@ -11,32 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :recap %>
-    <%= form.text_area :recap %>
+    <%= form.text_area :recap, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :follow_up_on %>
-    <%= form.date_select :follow_up_on, { order: [:month, :day, :year] } %>
+    <%= form.date_select :follow_up_on,
+                         { order: [:month, :day, :year] },
+                         class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :source %>
-    <%= form.text_field :source %>
+    <%= form.text_field :source, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :result %>
-    <%= form.text_field :result %>
+    <%= form.text_field :result, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :contact_id %>
-    <%= form.collection_select :contact_id, contacts, :id, :name %>
+    <%= form.collection_select :contact_id,
+                               contacts,
+                               :id,
+                               :name,
+                               { prompt: true },
+                               { class: 'custom-select' } %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: 'form-control' %>
   </div>
 <% end %>
