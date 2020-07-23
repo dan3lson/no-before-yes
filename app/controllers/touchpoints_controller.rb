@@ -47,7 +47,7 @@ class TouchpointsController < ApplicationController
   end
 
   def set_contacts
-    @contacts = current_user.contacts
+    @contacts = current_user.contacts.by_name
   end
 
   def touchpoint_params
