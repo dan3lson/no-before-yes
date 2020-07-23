@@ -24,6 +24,10 @@ class DashboardPresenter
 		touchpoints.today.size
 	end
 
+	def untouched_contacts
+		@untouched_contacts ||= user.contacts.untouched
+	end
+
 	private
 
   # TODO: we need to ask (then store) the user about their conversion ratio: how

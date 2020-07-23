@@ -13,4 +13,8 @@ RSpec.describe Contact, type: :model do
     subject { create(:contact) }
     it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
   end
+
+  describe 'class methods' do
+    describe '::untouched'
+  end
 end
