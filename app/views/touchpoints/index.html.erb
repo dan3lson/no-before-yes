@@ -11,6 +11,7 @@
       <th>Source</th>
       <th>Result</th>
       <th>User</th>
+      <th>Contacted at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= touchpoint.source %></td>
         <td><%= touchpoint.result %></td>
         <td><%= touchpoint.user.email %></td>
+        <td><%= touchpoint.created_at.in_time_zone('US/Eastern') %></td>
         <td><%= link_to 'Show', touchpoint %></td>
         <td><%= link_to 'Edit', edit_touchpoint_path(touchpoint) %></td>
         <td><%= link_to 'Destroy', touchpoint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
