@@ -3,7 +3,7 @@ class TouchpointsController < ApplicationController
   before_action :set_contacts, only: %i[new edit create update]
 
   def index
-    @touchpoints = current_user.touchpoints
+    @touchpoints = current_user.touchpoints.latest
   end
 
   def show
