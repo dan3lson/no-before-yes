@@ -4,6 +4,14 @@ class TouchpointsController < ApplicationController
 
   def index
     @touchpoints = current_user.touchpoints.latest
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'file_name',
+               template: 'touchpoints/index.html.erb'
+      end
+    end
   end
 
   def show
