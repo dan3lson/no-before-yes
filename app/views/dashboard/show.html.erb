@@ -24,19 +24,20 @@
   <h5>Untouched Contacts</h5>
 
   <% if @dashboard.untouched_contacts.any? %>
-    <table class="table table-striped table-sm">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Phone Number</th>
-          <th>Note</th>
-        </tr>
-      </thead>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Website</th>
+            <th>Phone Number</th>
+            <th>Note</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <% @dashboard.untouched_contacts.each do |contact| %>
+        <tbody>
+          <% @dashboard.untouched_contacts.each do |contact| %>
           <tr>
             <td><%= contact.name %></td>
             <td><%= contact.email %></td>
@@ -44,9 +45,10 @@
             <td><%= contact.phone_number %></td>
             <td><%= contact.note %></td>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% else %>
     <p>
       We didn't find any contacts without touchpoints or any touchpoints which need
