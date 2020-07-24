@@ -25,7 +25,7 @@ class DashboardPresenter
 	end
 
 	def untouched_contacts
-		@untouched_contacts ||= user.contacts.untouched
+		@untouched_contacts ||= user.contacts.by_name.untouched
 	end
 
 	private
