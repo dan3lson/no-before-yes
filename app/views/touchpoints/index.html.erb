@@ -21,11 +21,11 @@
       <tr>
         <td><%= touchpoint.contact.name %></td>
         <td><%= touchpoint.recap %></td>
-        <td><%= touchpoint.follow_up_on %></td>
+        <td><%= TouchpointPresenter.new(touchpoint).follow_up_on %></td>
         <td><%= touchpoint.source %></td>
         <td><%= touchpoint.result %></td>
         <td><%= touchpoint.user.email %></td>
-        <td><%= touchpoint.created_at %></td>
+        <td><%= TouchpointPresenter.new(touchpoint).created_at %></td>
         <td><%= link_to 'Show', touchpoint %></td>
         <td><%= link_to 'Edit', edit_touchpoint_path(touchpoint) %></td>
         <td>
