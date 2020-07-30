@@ -9,7 +9,7 @@ class DashboardPresenter
 	end
 
 	def num_noes
-		touchpoints.no.size
+		touchpoints.no.this_week.size
 	end
 
 	def num_noes_needed
