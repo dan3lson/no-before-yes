@@ -20,6 +20,7 @@
     <% @touchpoints.each do |touchpoint| %>
       <tr>
         <td><%= touchpoint.contact.name %></td>
+        <td><%= link_to touchpoint.contact.name, touchpoint.contact %></td>
         <td><%= touchpoint.recap %></td>
         <td><%= TouchpointPresenter.new(touchpoint).follow_up_on %></td>
         <td><%= touchpoint.source %></td>
