@@ -29,7 +29,7 @@ class DashboardPresenter
 	end
 
 	def follow_up_contacts_today
-		@follow_up_contacts_today ||= user.contacts.follow_up_today.by_name
+		@follow_up_contacts_today ||= user.contacts.follow_up_today
 	end
 
 	private

@@ -22,4 +22,16 @@ class Touchpoint < ApplicationRecord
   }
   scope :this_week, -> { where(created_at: Time.current.beginning_of_week..Time.current.end_of_week) }
   scope :follow_up_today, -> { where(follow_up_on: Date.today).order(:created_at) }
+
+  def follow_up?
+    return false unless follow_up_on == Date.today
+
+    touchpoints =
+      user.
+        touchpoints.
+        where(contact: contact).
+        where('created_at > ?', created_at)
+
+    touchpoints.empty?
+  end
 end

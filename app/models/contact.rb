@@ -12,7 +12,7 @@ class Contact < ApplicationRecord
   scope :follow_up_today, -> {
     joins(:touchpoints).
       merge(Touchpoint.follow_up_today).
-      order('touchpoints.created_at')
+      select { |contact| contact.follow_up_touchpoint.follow_up? }
   }
 
   def follow_up_touchpoint

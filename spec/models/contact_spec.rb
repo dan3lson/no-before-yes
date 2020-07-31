@@ -14,12 +14,12 @@ RSpec.describe Contact, type: :model do
     it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
   end
 
-  describe 'class methods' do
+  describe 'scopes' do
     describe '::untouched'
     describe '::follow_up_today'
   end
 
-  describe 'instance_methods' do
+  describe 'instance methods' do
     describe '#follow_up_touchpoint'
   end
 end

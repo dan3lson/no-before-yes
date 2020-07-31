@@ -32,4 +32,12 @@ RSpec.describe Touchpoint, type: :model do
     describe '::this_week'
     describe '::follow_up_today'
   end
+
+  describe 'instance methods' do
+    describe '#follow_up?' do
+      context 'when :follow_up_on is not today'
+      context 'when a touchpoint was made after this touchpoint'
+      context 'when no touchpoints were made after this touchpoint'
+    end
+  end
 end
