@@ -8,5 +8,5 @@ class Contact < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 
   scope :by_name, -> { order(:name) }
-  scope :untouched, -> { select { |c| c.touchpoints.empty? } }
+  scope :untouched, -> { select { |contact| contact.touchpoints.empty? } }
 end
