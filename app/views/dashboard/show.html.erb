@@ -50,18 +50,21 @@
       </table>
     </div>
   <% else %>
-    <p>We didn't find any contacts without touchpoints.</p>
+    <p>
+      It looks like you already reached out to all your contacts at least once.
+    </p>
   <% end %>
 </div>
 
 <div>
   <h5>Follow-up Contacts</h5>
-  <p>
-    Here's a list of contacts you should reach out to today. They're ordered by
-    when you created the touchpoint.
-  </p>
 
   <% if @dashboard.follow_up_contacts_today.any? %>
+    <p>
+      Here's a list of contacts you should reach out to today. They're ordered by
+      when you created the touchpoint.
+    </p>
+
     <div class="table-responsive">
       <table class="table table-striped table-sm">
         <thead>
