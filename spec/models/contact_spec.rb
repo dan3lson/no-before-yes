@@ -16,5 +16,10 @@ RSpec.describe Contact, type: :model do
 
   describe 'class methods' do
     describe '::untouched'
+    describe '::follow_up_today'
+  end
+
+  describe 'instance_methods' do
+    describe '#follow_up_touchpoint'
   end
 end

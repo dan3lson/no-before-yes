@@ -50,9 +50,48 @@
       </table>
     </div>
   <% else %>
+    <p>We didn't find any contacts without touchpoints.</p>
+  <% end %>
+</div>
+
+<div>
+  <h5>Follow-up Contacts</h5>
+  <p>
+    Here's a list of contacts you should reach out to today. They're ordered by
+    when you created the touchpoint.
+  </p>
+
+  <% if @dashboard.follow_up_contacts_today.any? %>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Website</th>
+            <th>Phone Number</th>
+            <th>Note</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @dashboard.follow_up_contacts_today.each do |contact| %>
+          <tr>
+            <td><%= contact.name %></td>
+            <td><%= contact.email %></td>
+            <td><%= link_to contact.website, contact.website, target: '_blank' %></td>
+            <td><%= contact.phone_number %></td>
+            <td><%= contact.note %></td>
+            <td><%= link_to 'Touchpoint', contact.follow_up_touchpoint %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
     <p>
-      We didn't find any contacts without touchpoints or any touchpoints which need
-      to be followed up on today.
+      We didn't find any contacts who need a follow-up today.
     </p>
   <% end %>
 </div>

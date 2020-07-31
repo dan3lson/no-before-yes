@@ -28,6 +28,10 @@ class DashboardPresenter
 		@untouched_contacts ||= user.contacts.by_name.untouched
 	end
 
+	def follow_up_contacts_today
+		@follow_up_contacts_today ||= user.contacts.follow_up_today.by_name
+	end
+
 	private
 
   # TODO: we need to ask (then store) the user about their conversion ratio: how

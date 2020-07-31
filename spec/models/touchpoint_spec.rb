@@ -27,6 +27,9 @@ RSpec.describe Touchpoint, type: :model do
   end
 
   context 'scopes' do
-    describe 'today'
+    describe '::today'
+    describe '::yesterday'
+    describe '::this_week'
+    describe '::follow_up_today'
   end
 end
