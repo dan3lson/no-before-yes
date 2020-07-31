@@ -18,7 +18,7 @@ class Touchpoint < ApplicationRecord
   }
   scope :latest, -> { order(created_at: :desc) }
   scope :yesterday, -> {
-    where(created_at: DateTime.current.beginning_of_day - 1.day..DateTime.current.end_of_day - 1.day )
+    where(created_at: Time.current.beginning_of_day - 1.day..Time.current.end_of_day - 1.day )
   }
   scope :this_week, -> { where(created_at: Time.current.beginning_of_week..Time.current.end_of_week) }
 end
