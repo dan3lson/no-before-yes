@@ -23,6 +23,16 @@
   <%= @touchpoint.contact.name %>
 </p>
 
+<p>
+  <strong>Created at:</strong>
+  <%= TouchpointPresenter.new(@touchpoint).created_at %>
+</p>
+
+<p>
+  <strong>Contacted by:</strong>
+  <%= @touchpoint.user.email %>
+</p>
+
 <%= link_to 'Edit', edit_touchpoint_path(@touchpoint) %> |
 <%= link_to 'Back', touchpoints_path %> |
 <%= link_to 'New Touchpoint', new_touchpoint_path %>
