@@ -11,32 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :website %>
-    <%= form.text_field :website %>
+    <%= form.text_field :website, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
+    <%= form.text_field :phone_number, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :note %>
-    <%= form.text_field :note %>
+    <%= form.text_field :note, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions mb-1">
+    <%= form.submit 'Submit', class: 'form-control btn-primary' %>
   </div>
+  <%= link_to 'Back', contacts_path, class: 'btn btn-outline-primary btn-block' %>
 <% end %>
