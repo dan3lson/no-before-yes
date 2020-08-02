@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = current_user.contacts.by_name
+    @contacts_size = @contacts.size
   end
 
   def show

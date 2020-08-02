@@ -1,33 +1,37 @@
 <h1>Contacts</h1>
 
+<p>You have <%= @contacts_size %> contacts.</p>
 <p><%= link_to 'New Contact', new_contact_path %></p>
 
-<div class="table-responsive">
-  <table class="table table-striped table-sm">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Website</th>
-        <th>Phone Number</th>
-        <th>Note</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+<div>
+  <% @contacts.each do |contact| %>
+    <div class="card mb-1">
+      <div class="card-body">
+        <h5 class="card-title"><%= contact.name %></h5>
+        <p class="card-text">
+          <b>Phone Number</b> <%= contact.phone_number %>
+          <br>
 
-    <tbody>
-      <% @contacts.each do |contact| %>
-        <tr>
-          <td><%= contact.name %></td>
-          <td><%= contact.email %></td>
-          <td><%= link_to contact.website, contact.website, target: '_blank' %></td>
-          <td><%= contact.phone_number %></td>
-          <td><%= contact.note %></td>
-          <td><%= link_to 'Show', contact %></td>
-          <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-          <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+          <% if contact.email %>
+            <b>Email</b> <%= contact.email %>
+          <% end %>
+
+          <% if contact.website %>
+            <br>
+            <b>Website</b> <%= link_to contact.website, contact.website, target: '_blank' %>
+            <br>
+          <% end %>
+
+          <b>Note</b> <%= contact.note %>
+        </p>
+        <p class="card-text">
+
+        </p>
+
+        <%= link_to 'Show', contact, class: 'card-link' %>
+        <%= link_to 'Edit', edit_contact_path(contact), class: 'card-link' %>
+        <%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
+      </div>
+    </div>
+  <% end %>
 </div>
