@@ -1,4 +1,11 @@
-<h3 class="mb-3">Touchpoint for <%= @touchpoint.contact.name %></h3>
+<h3 class="mb-3">
+  Touchpoint for <%= link_to @touchpoint.contact.name, @touchpoint.contact %>
+</h3>
+
+<p>
+  <strong>Created at:</strong>
+  <%= TouchpointPresenter.new(@touchpoint).created_at %>
+</p>
 
 <p>
   <strong>Recap:</strong>
@@ -7,7 +14,7 @@
 
 <p>
   <strong>Follow up on:</strong>
-  <%= @touchpoint.follow_up_on %>
+  <%= TouchpointPresenter.new(@touchpoint).follow_up_on %>
 </p>
 
 <p>
@@ -21,18 +28,25 @@
 </p>
 
 <p>
-  <strong>Contact:</strong>
-  <%= @touchpoint.contact.name %>
-</p>
-
-<p>
-  <strong>Created at:</strong>
-  <%= TouchpointPresenter.new(@touchpoint).created_at %>
-</p>
-
-<p>
   <strong>Contacted by:</strong>
   <%= @touchpoint.user.email %>
+</p>
+
+<hr>
+
+<p>
+  <strong>Contact Phone Number:</strong>
+  <%= @touchpoint.contact.phone_number %>
+</p>
+
+<p>
+  <strong>Contact Email:</strong>
+  <%= @touchpoint.contact.email %>
+</p>
+
+<p>
+  <strong>Contact Note:</strong>
+  <%= @touchpoint.contact.note %>
 </p>
 
 <%= link_to 'Back', :back %> |
