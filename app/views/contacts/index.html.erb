@@ -9,20 +9,22 @@
       <div class="card-body">
         <h5 class="card-title"><%= contact.name %></h5>
         <p class="card-text">
-          <b>Phone Number</b> <%= contact.phone_number %>
-          <br>
+          <% if contact.phone_number %>
+            <b>Phone Number:</b> <%= contact.phone_number %>
+            <br>
+          <% end %>
 
           <% if contact.email %>
-            <b>Email</b> <%= contact.email %>
+            <b>Email:</b> <%= contact.email %>
           <% end %>
 
           <% if contact.website %>
             <br>
-            <b>Website</b> <%= link_to contact.website, contact.website, target: '_blank' %>
+            <b>Website:</b> <%= link_to contact.website, contact.website, target: '_blank' %>
             <br>
           <% end %>
 
-          <b>Note</b> <%= contact.note %>
+          <b>Note:</b> <%= contact.note %>
         </p>
         <p class="card-text">
 
