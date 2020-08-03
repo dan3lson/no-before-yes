@@ -8,6 +8,8 @@ class TouchpointsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
+        @touchpoints = @touchpoints.today
+
         render pdf: 'file_name',
                template: 'touchpoints/index.html.erb'
       end
