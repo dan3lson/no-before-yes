@@ -33,6 +33,10 @@
   <%= @touchpoint.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_touchpoint_path(@touchpoint) %> |
 <%= link_to 'Back', :back %> |
+<%= link_to 'Edit', edit_touchpoint_path(@touchpoint) %> |
+<%= link_to 'Delete',
+						@touchpoint,
+						method: :delete,
+						data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'New Touchpoint', new_touchpoint_path %>

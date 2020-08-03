@@ -23,12 +23,20 @@
 
 <p>
   <strong>Phone number:</strong>
-  <%= @contact.phone_number %>
+  <% if @contact.phone_number %>
+    <%= @contact.phone_number %>
+  <% else %>
+    <span class="text-muted">none</span>
+  <% end %>
 </p>
 
 <p>
   <strong>Note:</strong>
-  <%= @contact.note %>
+  <% if @contact.note %>
+    <%= @contact.note %>
+  <% else %>
+    <span class="text-muted">none</span>
+  <% end %>
 </p>
 
 <p>
@@ -36,5 +44,9 @@
   <%= @contact.user.email %>
 </p>
 
+<%= link_to 'Back', contacts_path %> |
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Delete',
+						@contact,
+						method: :delete,
+						data: { confirm: 'Are you sure?' } %>
