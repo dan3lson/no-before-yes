@@ -9,11 +9,11 @@ class TouchpointPresenter
 	end
 
 	def follow_up_on
-		touchpoint.follow_up_on.strftime('%a, %b %e')
+		touchpoint.follow_up_on.strftime('%A, %B %e')
 	end
 
 	def created_at
-		touchpoint.created_at.strftime('%a, %b %e at %l:%M %p')
+		touchpoint.created_at.strftime('%A, %B %e at %l:%M %p')
 	end
 
 	def result_dropdown_options
