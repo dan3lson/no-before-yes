@@ -16,7 +16,6 @@ RSpec.describe Contact, type: :model do
 
   describe 'scopes' do
     describe '::untouched'
-    describe '::follow_up_today'
   end
 
   describe 'instance methods' do

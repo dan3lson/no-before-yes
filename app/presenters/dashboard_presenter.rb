@@ -29,7 +29,12 @@ class DashboardPresenter
 	end
 
 	def follow_up_contacts_today
-		@follow_up_contacts_today ||= user.contacts.follow_up_today
+		@follow_up_contacts_today ||=
+		  user.
+			  touchpoints.
+				follow_up_today.
+				select(&:follow_up?).
+				map(&:contact)
 	end
 
 	private
