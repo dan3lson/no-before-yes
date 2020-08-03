@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+
+# TouchpointPresenter
 class TouchpointPresenter
 	attr_reader :touchpoint
 
@@ -12,5 +14,9 @@ class TouchpointPresenter
 
 	def created_at
 		touchpoint.created_at.strftime('%a, %b %e at %l:%M %p')
+	end
+
+	def result_dropdown_options
+		touchpoint.class.results.keys
 	end
 end

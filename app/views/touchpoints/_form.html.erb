@@ -40,7 +40,10 @@
 
   <div class="form-group">
     <%= form.label :result %>
-    <%= form.text_field :result, class: 'form-control' %>
+    <%= form.select :result,
+                    TouchpointPresenter.new(touchpoint).result_dropdown_options,
+                    {},
+                    { class: 'form-control' } %>
   </div>
 
   <div class="actions mb-1">
