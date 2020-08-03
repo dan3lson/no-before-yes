@@ -5,12 +5,20 @@
 
 <p>
   <strong>Website:</strong>
-  <%= link_to @contact.website, @contact.website, target: '_blank' %>
+  <% if @contact.website %>
+    <%= link_to @contact.website, @contact.website, target: '_blank' %>
+  <% else %>
+    <span class="text-muted">none</span>
+  <% end %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @contact.email %>
+  <% if @contact.email %>
+    <%= @contact.email %>
+  <% else %>
+    <span class="text-muted">none</span>
+  <% end %>
 </p>
 
 <p>
