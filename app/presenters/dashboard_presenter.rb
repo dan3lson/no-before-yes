@@ -42,7 +42,7 @@ class DashboardPresenter
   # TODO: we need to ask (then store) the user about their conversion ratio: how
 	#   many noes does it take to get one yes?
 	def num_touchpoints_for_one_yes
-		50
+		25
 	end
 
 	# TODO: replace with the (stored) user's weekly goal
