@@ -51,6 +51,9 @@ class ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:name, :website, :email, :phone_number, :note, :user_id)
+    params.
+      require(:contact).
+      permit(:name, :website, :email, :phone_number, :note, :user_id).
+      reject { |_key, value| value.blank? }
   end
 end
