@@ -30,7 +30,7 @@
       <ol>
         <% @dashboard.untouched_contacts.each do |contact| %>
           <li>
-            <b><%= contact.name %>:</b>
+            <strong><%= contact.name %>:</strong>
 
             <% if contact.phone_number %>
               <%= contact.phone_number %> |
@@ -60,26 +60,17 @@
   <h5>Follow-up Contacts</h5>
 
   <% if @dashboard.follow_up_contacts_today.any? %>
-    <p>Here's a list of contacts you should reach out to today.</p>
+    <p>
+      Here's a list of contacts you should reach out to today based on your last
+      touchpoint with them.
+    </p>
 
     <ol>
       <% @dashboard.follow_up_contacts_today.each do |contact| %>
         <li>
-          <b><%= contact.name %>:</b>
+          <strong><%= contact.name %>:</strong>
 
-          <% if contact.phone_number %>
-            <%= contact.phone_number %> |
-          <% end %>
-
-          <% if contact.email %>
-            <%= contact.email %> |
-          <% end %>
-
-          <% if contact.note %>
-            <%= contact.note %> |
-          <% end %>
-          <%= link_to 'Show', contact, class: 'card-link' %> |
-          <%= link_to 'Touchpoint', contact.follow_up_touchpoint %>
+          <%= link_to 'Show Touchpoint', contact.follow_up_touchpoint %>
         </li>
 
       <% end %>
