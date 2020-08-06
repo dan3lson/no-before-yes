@@ -37,6 +37,10 @@ class DashboardPresenter
 				map(&:contact)
 	end
 
+	def overdue_contacts
+		user.contacts.by_name.overdue
+	end
+
 	private
 
   # TODO: we need to ask (then store) the user about their conversion ratio: how

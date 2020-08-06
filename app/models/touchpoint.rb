@@ -24,16 +24,15 @@ class Touchpoint < ApplicationRecord
     where(created_at: Time.current.beginning_of_week..Time.current.end_of_week)
   }
   scope :follow_up_today, -> { where(follow_up_on: Date.today).order(:created_at) }
+  scope :created_after, ->(touchpoint) { where(contact: touchpoint.contact).where('created_at > ?', touchpoint.created_at) }
 
   def follow_up?
-    return false unless follow_up_on == Date.today
+    return false unless follow_up_on == Time.zone.today
 
-    touchpoints =
-      user.
-        touchpoints.
-        where(contact: contact).
-        where('created_at > ?', created_at)
+    user.touchpoints.created_after(self).empty?
+  end
 
-    touchpoints.empty?
+  def overdue?
+    Time.zone.today > follow_up_on && user.touchpoints.created_after(self).empty?
   end
 end
