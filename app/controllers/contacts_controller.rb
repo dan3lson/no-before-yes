@@ -6,6 +6,7 @@ class ContactsController < ApplicationController
   end
 
   def show
+    @touchpoints = @contact.touchpoints.latest
   end
 
   def new
