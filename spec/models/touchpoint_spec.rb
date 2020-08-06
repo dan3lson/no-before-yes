@@ -31,6 +31,7 @@ RSpec.describe Touchpoint, type: :model do
     describe '::yesterday'
     describe '::this_week'
     describe '::follow_up_today'
+    describe '::created_after'
   end
 
   describe 'instance methods' do
