@@ -1,83 +1,13 @@
 <h1>Dashboard</h1>
 
 <div>
-  <p>Today is <%= today %>.</p>
+  <p class="text-muted">Today is <%= today %>.</p>
 </div>
 
-<div>
-  <h5>This Week's Snapshot</h5>
+<%= render 'snapshot', dashboard: @dashboard %>
 
-  <ul>
-    <li>
-      Noes: <%= @dashboard.num_noes %>/<%= @dashboard.num_noes_needed %>
-    </li>
-    <li>
-      Progress: <%= @dashboard.progress %>%
-    </li>
-    <li>
-      Touchpoints today: <%= @dashboard.num_touchpoints_today %>
-    </li>
-  </ul>
-</div>
+<%= render 'overdue_contacts', dashboard: @dashboard %>
 
-<div>
-  <h5>Untouched Contacts</h5>
+<%= render 'follow_up_contacts', dashboard: @dashboard %>
 
-  <p>You haven't reached out to any of the contacts below yet.</p>
-
-  <% if @dashboard.untouched_contacts.any? %>
-    <div class="mb-3">
-      <ol>
-        <% @dashboard.untouched_contacts.each do |contact| %>
-          <li>
-            <strong><%= contact.name %>:</strong>
-
-            <% if contact.phone_number %>
-              <%= contact.phone_number %> |
-            <% end %>
-
-            <% if contact.email %>
-              <%= contact.email %> |
-            <% end %>
-
-            <% if contact.note %>
-              <%= contact.note %> |
-            <% end %>
-            <%= link_to 'Show', contact, class: 'card-link' %>
-          </li>
-
-        <% end %>
-      </ol>
-    </div>
-  <% else %>
-    <p>
-      It looks like you already reached out to all your contacts at least once.
-    </p>
-  <% end %>
-</div>
-
-<div>
-  <h5>Follow-up Contacts</h5>
-
-  <% if @dashboard.follow_up_contacts_today.any? %>
-    <p>
-      Here's a list of contacts you should reach out to today based on your last
-      touchpoint with them.
-    </p>
-
-    <ol>
-      <% @dashboard.follow_up_contacts_today.each do |contact| %>
-        <li>
-          <strong><%= contact.name %>:</strong>
-
-          <%= link_to 'Show Touchpoint', contact.follow_up_touchpoint %>
-        </li>
-
-      <% end %>
-    </ol>
-  <% else %>
-    <p>
-      We didn't find any contacts who need a follow-up today.
-    </p>
-  <% end %>
-</div>
+<%= render 'untouched_contacts', dashboard: @dashboard %>

@@ -1,0 +1,25 @@
+<div>
+  <h3>Follow-up Contacts</h3>
+
+  <% if dashboard.follow_up_contacts_today.any? %>
+    <p class="text-muted">
+      Here's a list of contacts you should reach out to today based on your last
+      touchpoint with them.
+    </p>
+
+    <ol>
+      <% dashboard.follow_up_contacts_today.each do |contact| %>
+        <li>
+          <strong><%= contact.name %>:</strong>
+
+          <%= link_to 'Show Touchpoint', contact.follow_up_touchpoint %>
+        </li>
+
+      <% end %>
+    </ol>
+  <% else %>
+    <p class="text-muted">
+      We didn't find any contacts who need a follow-up today.
+    </p>
+  <% end %>
+</div>

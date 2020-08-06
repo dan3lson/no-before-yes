@@ -1,0 +1,25 @@
+<div>
+  <h3>Overdue Contacts</h3>
+
+  <% if dashboard.overdue_contacts.any? %>
+    <p class="text-muted">
+      Looks like you weren't able to reach out to the contacts below on their
+      follow-up date. Try to do so as soon as you can.
+    </p>
+
+    <ol>
+      <% dashboard.overdue_contacts.each do |contact| %>
+        <li>
+          <strong><%= contact.name %>:</strong>
+
+          <%= link_to 'Show Touchpoint', contact.overdue_touchpoint %>
+        </li>
+
+      <% end %>
+    </ol>
+  <% else %>
+    <p>
+      You're all caught up with contacts who needed a follow-up.
+    </p>
+  <% end %>
+</div>

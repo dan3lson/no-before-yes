@@ -1,0 +1,36 @@
+<div>
+  <h3>Untouched Contacts</h3>
+
+  <% if dashboard.untouched_contacts.any? %>
+    <p class="text-muted">
+      You haven't reached out to any of the contacts below yet.
+    </p>
+
+    <div class="mb-3">
+      <ol>
+        <% dashboard.untouched_contacts.each do |contact| %>
+          <li>
+            <strong><%= contact.name %>:</strong>
+
+            <% if contact.phone_number %>
+              <%= contact.phone_number %> |
+            <% end %>
+
+            <% if contact.email %>
+              <%= contact.email %> |
+            <% end %>
+
+            <% if contact.note %>
+              <%= contact.note %> |
+            <% end %>
+            <%= link_to 'Show', contact, class: 'card-link' %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+  <% else %>
+    <p class="text-muted">
+      It looks like you already reached out to all your contacts at least once.
+    </p>
+  <% end %>
+</div>
