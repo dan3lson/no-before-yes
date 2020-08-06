@@ -32,6 +32,11 @@
                         touchpoints_path,
                         class: 'nav-link' %>
           </li>
+          <li class="nav-item <%= active_link?(:stats) %>">
+            <%= link_to 'Stats',
+                        stats_path,
+                        class: 'nav-link' %>
+          </li>
         </ul>
       </div>
     </nav>

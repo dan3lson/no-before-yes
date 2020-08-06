@@ -1,0 +1,22 @@
+<h1>Stats</h1>
+
+<p class="text-muted">We crunched some numbers for you.</p>
+
+<p>
+	<strong>Contacts:</strong> <%= @stats.contact_size %>
+
+	<ul>
+		<li><strong>Overdue:</strong> <%= @stats.overdue_size %></li>
+		<li><strong>Untouched:</strong> <%= @stats.untouched_size %></li>
+	</ul>
+</p>
+
+<p>
+	<strong>Touchpoints:</strong> <%= @stats.touchpoint_size %>
+
+	<ul>
+		<li><strong>No:</strong> <%= @stats.no_size %></li>
+		<li><strong>Yes:</strong> <%= @stats.yes_size %></li>
+		<li><strong>Unknown:</strong> <%= @stats.unknown_size %></li>
+	</ul>
+</p>
