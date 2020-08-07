@@ -2,7 +2,7 @@
 
 # User
 class User < ApplicationRecord
-	has_secure_password
+  include Clearance::User
 
   has_many :contacts, dependent: :restrict_with_error
   has_many :touchpoints, dependent: :restrict_with_error

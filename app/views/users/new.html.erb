@@ -1,3 +1,31 @@
-<h1>Sign Up</h1>
+<div id="clearance" class="sign-up">
+  <h2><%= t(".title") %></h2>
 
-<%= render 'form', user: @user %>
+  <%= form_for @user do |form| %>
+		<% if @user.errors.any? %>
+			<div id="error_explanation">
+				<h2>
+					<%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+				</h2>
+
+				<ul>
+					<% @user.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+    <%= render partial: '/users/form', object: form %>
+
+		<div class="mb-1">
+			<%= form.submit t(".submit_btn"), class: 'form-control btn-primary' %>
+		</div>
+
+    <div class="other-links">
+      <%= link_to t(".sign_in"),
+			            sign_in_path,
+									class: 'btn btn-outline-primary btn-block' %>
+    </div>
+  <% end %>
+</div>

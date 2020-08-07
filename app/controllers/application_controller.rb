@@ -1,11 +1,8 @@
 class ApplicationController < ActionController::Base
+  include Clearance::Controller
+
+  before_action :require_login
 	around_action :set_time_zone, if: :current_user
-
-	protected
-
-	def current_user
-		@current_user ||= User.find_by(email: 'danelson@greatawait.com')
-	end
 
 	private
 
