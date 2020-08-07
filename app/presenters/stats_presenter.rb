@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# StatPresenter displays all-time aggregate data and trends.
+# StatPresenter displays all-time aggregate data and trends for a user.
 class StatsPresenter
 	attr_reader :user
 
