@@ -13,7 +13,9 @@ class UsersController < Clearance::UsersController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      flash[:success] = 'User was successfully updated.'
+
+      redirect_to @user
     else
       render :edit
     end
@@ -21,8 +23,9 @@ class UsersController < Clearance::UsersController
 
   def destroy
     @user.destroy
+    flash[:success] = 'User was successfully destroyed.'
 
-    redirect_to users_url, notice: 'User was successfully destroyed.'
+    redirect_to users_url
   end
 
   private

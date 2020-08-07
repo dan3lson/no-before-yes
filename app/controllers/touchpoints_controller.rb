@@ -30,7 +30,9 @@ class TouchpointsController < ApplicationController
     @touchpoint = current_user.touchpoints.new(touchpoint_params)
 
     if @touchpoint.save
-      redirect_to @touchpoint, notice: 'Touchpoint was successfully created.'
+      flash[:success] = 'Touchpoint was successfully created.'
+
+      redirect_to @touchpoint
     else
       render :new
     end
@@ -38,7 +40,9 @@ class TouchpointsController < ApplicationController
 
   def update
     if @touchpoint.update(touchpoint_params)
-      redirect_to @touchpoint, notice: 'Touchpoint was successfully updated.'
+      flash[:success] = 'Touchpoint was successfully updated.'
+
+      redirect_to @touchpoint
     else
       render :edit
     end
@@ -46,8 +50,9 @@ class TouchpointsController < ApplicationController
 
   def destroy
     @touchpoint.destroy
+    flash[:success] = 'Touchpoint was successfully destroyed.'
 
-    redirect_to touchpoints_url, notice: 'Touchpoint was successfully destroyed.'
+    redirect_to touchpoints_url
   end
 
   private

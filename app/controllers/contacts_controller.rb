@@ -20,7 +20,9 @@ class ContactsController < ApplicationController
     @contact = current_user.contacts.new(contact_params)
 
     if @contact.save
-      redirect_to new_contact_path, notice: 'Contact was successfully created.'
+      flash[:success] = 'Contact was successfully created.'
+
+      redirect_to new_contact_path
     else
       render :new
     end
@@ -28,7 +30,9 @@ class ContactsController < ApplicationController
 
   def update
     if @contact.update(contact_params)
-      redirect_to @contact, notice: 'Contact was successfully updated.'
+      flash[:success] = 'Contact was successfully updated.'
+
+      redirect_to @contact
     else
       render :edit
     end
@@ -38,9 +42,13 @@ class ContactsController < ApplicationController
     @contact.destroy
 
     if @contact.destroyed?
-      redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+      flash[:success] = 'Contact was successfully destroyed.'
+
+      redirect_to contacts_url
     else
-      redirect_to contacts_url, notice: 'Contact was not destroyed (check association restrictions).'
+      flash[:danger] = 'Contact was not destroyed (check association restrictions?).'
+
+      redirect_to contacts_url
     end
   end
 
