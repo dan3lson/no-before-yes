@@ -1,0 +1,31 @@
+<% contacts.each do |contact| %>
+  <div class="card mb-1">
+    <div class="card-body">
+      <h5 class="card-title"><%= contact.name %></h5>
+      <p class="card-text">
+        <% if contact.phone_number %>
+          <b>Phone Number:</b> <%= contact.phone_number %>
+        <% end %>
+
+        <% if contact.email %>
+          <br>
+          <b>Email:</b> <%= contact.email %>
+        <% end %>
+
+        <% if contact.website %>
+          <br>
+          <b>Website:</b> <%= link_to contact.website, contact.website, target: '_blank' %>
+        <% end %>
+
+        <% if contact.note %>
+          <br>
+          <b>Note:</b> <%= contact.note %>
+        <% end %>
+      </p>
+
+      <%= link_to 'Show', contact, class: 'card-link' %>
+      <%= link_to 'Edit', edit_contact_path(contact), class: 'card-link' %>
+      <%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
+    </div>
+  </div>
+<% end %>

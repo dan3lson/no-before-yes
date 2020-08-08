@@ -1,35 +1,9 @@
 <h1>Contacts</h1>
 
-<p><%= link_to 'New Contact', new_contact_path %></p>
+<% if @contacts.any? %>
+  <p><%= link_to 'New Contact', new_contact_path %></p>
 
-<div>
-  <% @contacts.each do |contact| %>
-    <div class="card mb-1">
-      <div class="card-body">
-        <h5 class="card-title"><%= contact.name %></h5>
-        <p class="card-text">
-          <% if contact.phone_number %>
-            <b>Phone Number:</b> <%= contact.phone_number %>
-            <br>
-          <% end %>
-
-          <% if contact.email %>
-            <b>Email:</b> <%= contact.email %>
-          <% end %>
-
-          <% if contact.website %>
-            <br>
-            <b>Website:</b> <%= link_to contact.website, contact.website, target: '_blank' %>
-            <br>
-          <% end %>
-
-          <b>Note:</b> <%= contact.note %>
-        </p>
-
-        <%= link_to 'Show', contact, class: 'card-link' %>
-        <%= link_to 'Edit', edit_contact_path(contact), class: 'card-link' %>
-        <%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
-      </div>
-    </div>
-  <% end %>
-</div>
+  <%= render 'contacts', contacts: @contacts %>
+<% else %>
+  <%= render 'empty_state' %>
+<% end %>
