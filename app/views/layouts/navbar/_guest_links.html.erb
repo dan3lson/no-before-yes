@@ -1,0 +1,28 @@
+<li class="nav-item <%= active_link?(:how_it_works) %>">
+	<%= link_to 'How it works',
+							how_it_works_path,
+							class: 'nav-link' %>
+</li>
+<li class="nav-item <%= active_link?(:pricing) %>">
+	<%= link_to 'Pricing',
+							pricing_path,
+							class: 'nav-link' %>
+</li>
+<li class="nav-item <%= active_link?(:touchpoints) %>">
+	<%= link_to 'Support',
+							support_path,
+							class: 'nav-link' %>
+</li>
+<li class="nav-item">
+	<% if signed_in? %>
+		<%= link_to 'Sign out',
+								sign_out_path,
+								method: :delete,
+								class: 'nav-link' %>
+	<% else %>
+	  <%= link_to 'Sign in', sign_in_path, class: 'btn btn-outline-primary' %>
+	<% end %>
+	<%= link_to 'Try it FREE',
+							sign_up_path,
+							class: 'btn btn-primary' %>
+</li>

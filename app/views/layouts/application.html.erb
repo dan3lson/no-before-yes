@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>NoBeforeYes</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render 'layouts/head' %>
 
   <body>
-    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar/navbar' %>
 
     <div class="container">
-      <div id="flash">
-        <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>">
-              <%= value %>
-            </div>
-          <% end %>
-      </div>
-      <p id="notice"><%= notice %></p>
+      <%= render 'layouts/flashes' %>
 
       <%= yield %>
     </div>

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light mb-3">
+	<a class="navbar-brand" href="<%= root_path %>">No Before Yes</a>
+	<button class="navbar-toggler"
+	        type="button"
+					data-toggle="collapse"
+					data-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<span class="navbar-text mr-auto">
+			Inspired by Go For No!
+		</span>
+		<ul class="navbar-nav">
+			<% if signed_in? %>
+			  <%= render 'layouts/navbar/customer_links' %>
+			<% else %>
+			  <%= render 'layouts/navbar/guest_links' %>
+			<% end %>
+		</ul>
+	</div>
+</nav>
