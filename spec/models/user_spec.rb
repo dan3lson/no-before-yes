@@ -13,4 +13,8 @@ RSpec.describe User, type: :model do
     subject { create(:user) }
     it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
   end
+
+  context 'instance methods' do
+    context '#contacts?'
+  end
 end

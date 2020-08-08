@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :touchpoints, dependent: :restrict_with_error
 
 	validates :email, presence: true, uniqueness: { case_sensitive: false }
+
+  def contacts?
+    contacts.any?
+  end
 end

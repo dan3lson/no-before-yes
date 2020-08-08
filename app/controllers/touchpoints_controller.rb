@@ -4,6 +4,7 @@ class TouchpointsController < ApplicationController
 
   def index
     @touchpoints = current_user.touchpoints.latest
+    @any_contacts = current_user.contacts?
 
     respond_to do |format|
       format.html

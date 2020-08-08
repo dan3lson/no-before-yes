@@ -5,5 +5,5 @@
 
   <%= render 'touchpoints', touchpoints: @touchpoints %>
 <% else %>
-  <%= render 'empty_state' %>
+  <%= render 'empty_state', any_contacts: @any_contacts %>
 <% end %>

@@ -1,10 +1,15 @@
 <div class="text-muted">
 	<p>
-		Every time you interact with a prospect or customer, keep track of what
+		When you interact with a prospect or customer, keep track of what
 		happened with a <em>touchpoint</em>.
-	</p>
-	<p>
-		You need to <%= link_to 'create a contact', new_contact_path %> first so we
-		know who a touchpoint belongs to.
+
+		<% if any_contacts %>
+		  <%= link_to 'Create your first one now', new_touchpoint_path %>.
+		<% else %>
+			<p>
+				You need to <%= link_to 'create a contact', new_contact_path %> first so we
+				know who a touchpoint belongs to.
+			</p>
+		<% end %>
 	</p>
 </div>
