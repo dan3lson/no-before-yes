@@ -1,0 +1,36 @@
+<% touchpoints.each do |touchpoint| %>
+  <div class="card mb-1">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= link_to touchpoint.contact.name, touchpoint.contact %>
+      </h5>
+      <p class="card-text">
+        <b>Recap:</b> <%= touchpoint.recap %>
+
+        <br>
+
+        <b>Follow Up On:</b> <%= TouchpointPresenter.new(touchpoint).follow_up_on %>
+
+        <br>
+
+        <b>Source:</b> <%= touchpoint.source %>
+
+        <br>
+
+        <b>Result:</b> <%= touchpoint.result %>
+
+        <br>
+
+        <b>Created At:</b> <%= TouchpointPresenter.new(touchpoint).created_at %>
+      </p>
+
+      <%= link_to 'Show', touchpoint, class: 'card-link' %>
+      <%= link_to 'Edit', edit_touchpoint_path(touchpoint), class: 'card-link' %>
+      <%= link_to 'Delete',
+                  touchpoint,
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' },
+                  class: 'card-link' %>
+    </div>
+  </div>
+<% end %>
