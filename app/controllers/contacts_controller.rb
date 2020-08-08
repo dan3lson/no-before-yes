@@ -46,7 +46,8 @@ class ContactsController < ApplicationController
 
       redirect_to contacts_url
     else
-      flash[:danger] = 'Contact was not destroyed (check association restrictions?).'
+      message = 'Contact was not destroyed. Try to delete any of its touchpoints first.'
+      flash[:danger] = message
 
       redirect_to contacts_url
     end
