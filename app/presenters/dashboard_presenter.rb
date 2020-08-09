@@ -2,6 +2,8 @@
 
 # DashboardPresenter displays data for the current week.
 class DashboardPresenter
+	CONTACTS_VIEW_LIMIT = 5
+
 	attr_reader :user
 
 	def initialize(user)
@@ -25,7 +27,7 @@ class DashboardPresenter
 	end
 
 	def untouched_contacts
-		@untouched_contacts ||= user.contacts.by_name.untouched.take(10)
+		@untouched_contacts ||= user.contacts.by_name.untouched.take(CONTACTS_VIEW_LIMIT)
 	end
 
 	def follow_up_contacts_today
@@ -35,11 +37,11 @@ class DashboardPresenter
 				follow_up_today.
 				select(&:follow_up?).
 				map(&:contact).
-				take(10)
+				take(CONTACTS_VIEW_LIMIT)
 	end
 
 	def overdue_contacts
-		user.contacts.by_name.overdue.take(10)
+		user.contacts.by_name.overdue.take(CONTACTS_VIEW_LIMIT)
 	end
 
 	private
