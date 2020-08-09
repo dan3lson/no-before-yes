@@ -26,6 +26,10 @@ class DashboardPresenter
 		touchpoints.today.size
 	end
 
+	def num_touchpoints_this_week
+		touchpoints.this_week.size
+	end
+
 	def untouched_contacts
 		@untouched_contacts ||= user.contacts.by_name.untouched.take(CONTACTS_VIEW_LIMIT)
 	end
