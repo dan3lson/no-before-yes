@@ -9,7 +9,9 @@ class Contact < ApplicationRecord
 
   scope :by_name, -> { order(:name) }
   scope :untouched, -> { select { |contact| contact.touchpoints.empty? } }
-  scope :overdue, -> { select { |contact| !contact.touchpoints.select(&:overdue?).empty? } }
+  scope :overdue, -> {
+    select { |contact| !contact.touchpoints.select(&:overdue?).empty? }
+  }
 
   def follow_up_touchpoint
     touchpoints.follow_up_today.last
