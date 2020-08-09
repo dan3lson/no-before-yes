@@ -25,7 +25,7 @@ class DashboardPresenter
 	end
 
 	def untouched_contacts
-		@untouched_contacts ||= user.contacts.by_name.untouched
+		@untouched_contacts ||= user.contacts.by_name.untouched.take(10)
 	end
 
 	def follow_up_contacts_today
@@ -34,11 +34,12 @@ class DashboardPresenter
 			  touchpoints.
 				follow_up_today.
 				select(&:follow_up?).
-				map(&:contact)
+				map(&:contact).
+				take(10)
 	end
 
 	def overdue_contacts
-		user.contacts.by_name.overdue
+		user.contacts.by_name.overdue.take(10)
 	end
 
 	private
