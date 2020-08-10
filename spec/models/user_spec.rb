@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
   context 'associations' do
     it { is_expected.to have_many(:contacts).dependent(:restrict_with_error) }
     it { is_expected.to have_many(:touchpoints).dependent(:restrict_with_error) }
+    it { is_expected.to have_many(:goals).dependent(:destroy) }
   end
 
   context 'validations' do

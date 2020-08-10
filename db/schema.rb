@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_08_155518) do
+ActiveRecord::Schema.define(version: 2020_08_09_180739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 2020_08_08_155518) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_contacts_on_name"
     t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
+  create_table "goals", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "target", null: false
+    t.uuid "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "touchpoints", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -55,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_08_08_155518) do
   end
 
   add_foreign_key "contacts", "users"
+  add_foreign_key "goals", "users"
   add_foreign_key "touchpoints", "contacts"
   add_foreign_key "touchpoints", "users"
 end
