@@ -56,9 +56,8 @@ class DashboardPresenter
 		25
 	end
 
-	# TODO: replace with the (stored) user's weekly goal
 	def goal
-		1
+		user.active_goal.target
 	end
 
 	def touchpoints
