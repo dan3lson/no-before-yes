@@ -8,5 +8,10 @@
   <%= @user.time_zone %>
 </p>
 
+<p>
+  <strong>Goal:</strong>
+  <%= @user.active_goal.target %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
