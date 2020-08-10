@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def contacts?
     contacts.any?
   end
+
+  def active_goal
+    goals.latest.first
+  end
 end
