@@ -3,11 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe DashboardPresenter do
-	describe '#num_noes' do
-		context 'noes this week'
-		context 'noes last week'
-		context 'zero noes'
-	end
-	describe '#num_noes_needed'
-	describe '#progress'
+	describe 'no_goal'
+	describe 'progress'
+	describe 'num_touchpoints_today'
+	describe 'num_touchpoints_this_week'
+	describe 'untouched_contacts'
+	describe 'follow_up_contacts_today'
+	describe 'overdue_contacts'
 end

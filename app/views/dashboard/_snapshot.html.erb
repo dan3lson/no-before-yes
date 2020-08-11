@@ -3,14 +3,28 @@
 
   <ul>
     <li>
-      Noes: <%= dashboard.num_noes %>/<%= dashboard.num_noes_needed %>
+      Goal:
+      <% if dashboard.user.goal? %>
+        <%= dashboard.no_goal %> noes
+        <%= link_to 'Update', new_goal_path %>
+      <% else %>
+        <span class="text-muted">
+          <%= link_to 'set a target', new_goal_path %>
+          for how many noes to get this week
+        </span>
+      <% end %>
     </li>
-    <li>
-      Progress: <%= dashboard.progress %>%
-    </li>
+
+    <% if dashboard.user.goal? %>
+      <li>
+        Progress: <%= dashboard.progress %>%
+      </li>
+    <% end %>
+
     <li>
       Touchpoints today: <%= dashboard.num_touchpoints_today %>
     </li>
+
     <li>
       Touchpoints this week: <%= dashboard.num_touchpoints_this_week %>
     </li>
