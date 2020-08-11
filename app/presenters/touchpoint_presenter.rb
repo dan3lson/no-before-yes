@@ -19,4 +19,8 @@ class TouchpointPresenter
 	def result_dropdown_options
 		touchpoint.class.results.keys
 	end
+
+	def source_dropdown_options
+		touchpoint.class.sources.map { |key, _value| [key.humanize.downcase, key] }
+	end
 end
