@@ -2,11 +2,6 @@
 
 <%= render 'show_page_fields', contact: @contact %>
 
-<p>
-  <strong>Created by:</strong>
-  <%= @contact.user.email %>
-</p>
-
 <%= link_to 'Back', contacts_path %> |
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Delete',
