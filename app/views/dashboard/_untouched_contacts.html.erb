@@ -23,7 +23,9 @@
             <% if contact.note %>
               <%= contact.note %> |
             <% end %>
-            <%= link_to 'Show', contact, class: 'card-link' %>
+            <%= link_to 'Show', contact, class: 'card-link' %> |
+            <%= link_to 'New Touchpoint',
+                        new_contact_touchpoint_path(contact) %>
           </li>
         <% end %>
       </ol>
