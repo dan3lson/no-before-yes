@@ -34,20 +34,7 @@
 
 <hr>
 
-<p>
-  <strong>Contact Phone Number:</strong>
-  <%= @touchpoint.contact.phone_number %>
-</p>
-
-<p>
-  <strong>Contact Email:</strong>
-  <%= @touchpoint.contact.email %>
-</p>
-
-<p>
-  <strong>Contact Note:</strong>
-  <%= @touchpoint.contact.note %>
-</p>
+<%= render 'contacts/show_page_fields', contact: @touchpoint.contact %>
 
 <%= link_to 'Back', :back %> |
 <%= link_to 'Edit', edit_touchpoint_path(@touchpoint) %> |

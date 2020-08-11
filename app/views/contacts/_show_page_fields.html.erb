@@ -1,0 +1,35 @@
+<p>
+  <strong>Phone number:</strong>
+  <% if contact.phone_number %>
+    <%= contact.phone_number %>
+  <% else %>
+    <span class="text-muted">none</span>
+  <% end %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <% if contact.email %>
+    <%= contact.email %>
+  <% else %>
+    <span class="text-muted">none</span>
+  <% end %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <% if contact.website %>
+    <%= link_to contact.website, contact.website, target: '_blank' %>
+  <% else %>
+    <span class="text-muted">none</span>
+  <% end %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <% if contact.note %>
+    <%= contact.note %>
+  <% else %>
+    <span class="text-muted">none</span>
+  <% end %>
+</p>
