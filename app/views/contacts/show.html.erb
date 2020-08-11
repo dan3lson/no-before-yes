@@ -1,4 +1,4 @@
-<h3 class="mb-3"><%= @contact.name %></h3>
+<h1 class="mb-3"><%= @contact.name %></h1>
 
 <%= render 'show_page_fields', contact: @contact %>
 
@@ -11,13 +11,17 @@
 
 <hr>
 
-<h4>Touchpoints</h4>
+<div>
+	<h4>Touchpoints</h4>
 
-<% if @touchpoints.any? %>
-  <%= render 'touchpoints/touchpoints', touchpoints: @touchpoints, title: false %>
-<% else %>
-  <p class="text-muted">
-    You don't have any touchpoints for this contact because you haven't
-    reached out to them yet.
-  </p>
-<% end %>
+	<p><%= link_to 'New Touchpoint', new_contact_touchpoint_path(@contact) %></p>
+
+	<% if @touchpoints.any? %>
+  	<%= render 'touchpoints/touchpoints', touchpoints: @touchpoints, title: false %>
+	<% else %>
+	  <p class="text-muted">
+		  You don't have any touchpoints for this contact because you haven't
+		  reached out to them yet.
+	  </p>
+	<% end %>
+</div>

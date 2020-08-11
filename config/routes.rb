@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   resources :stats, only: [:index]
   resource :dashboard, only: [:show], controller: 'dashboard'
   resources :touchpoints
-  resources :contacts
+  resources :contacts do
+    resources :touchpoints, only: %i[new create], controller: 'contacts/touchpoints'
+  end
 
   resources :passwords, controller: 'clearance/passwords', only: [:create, :new]
   resource :session, controller: 'clearance/sessions', only: [:create]

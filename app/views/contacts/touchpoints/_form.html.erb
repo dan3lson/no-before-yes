@@ -1,0 +1,26 @@
+<%= form_with(model: [@contact, touchpoint], local: true) do |form| %>
+  <% if touchpoint.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(touchpoint.errors.count, "error") %> prohibited this
+        touchpoint from being saved:
+      </h2>
+
+      <ul>
+        <% touchpoint.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render 'touchpoints/recap_follow_up_on_result_fields',
+             form: form,
+             touchpoint: touchpoint %>
+
+  <div class="actions mb-1">
+    <%= form.submit 'Save', class: 'btn btn-primary btn-block' %>
+  </div>
+
+  <%= link_to 'Cancel', contacts_path(touchpoint.contact), class: 'btn btn-outline-primary btn-block' %>
+<% end %>
