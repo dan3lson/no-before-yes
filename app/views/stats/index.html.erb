@@ -22,3 +22,14 @@
 		<li><strong>Unknown:</strong> <%= @stats.unknown_size %></li>
 	</ul>
 </p>
+
+<hr>
+
+<p>
+	The number of noes you need to get one yes:
+	<% if @stats.noes_needed_for_one_yes.zero? %>
+	  <span class="text-muted">we need more data to calculate this for you.</span>
+	<% else %>
+	  <%= @stats.noes_needed_for_one_yes %>
+	<% end %>
+</p>

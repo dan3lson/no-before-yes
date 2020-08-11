@@ -36,6 +36,12 @@ class StatsPresenter
 		touchpoints.unknown.size
 	end
 
+	def noes_needed_for_one_yes
+		return no_size if yes_size.zero?
+
+		no_size / yes_size
+	end
+
 	private
 
 	def contacts
