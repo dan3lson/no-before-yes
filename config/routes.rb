@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'pricing', to: 'static_pages#pricing'
   get 'support', to: 'static_pages#support'
   get 'about', to: 'static_pages#about'
+  get 'blog', to: 'static_pages#blog'
 
   get '/sign_in' => 'clearance/sessions#new', as: 'sign_in'
   delete '/sign_out' => "clearance/sessions#destroy", as: 'sign_out'
