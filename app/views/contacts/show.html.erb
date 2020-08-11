@@ -14,39 +14,7 @@
 <h4>Touchpoints</h4>
 
 <% if @touchpoints.any? %>
-  <% @touchpoints.each do |touchpoint| %>
-    <div class="card mb-1">
-      <div class="card-body">
-        <p class="card-text">
-          <b>Recap:</b> <%= touchpoint.recap %>
-
-          <br>
-
-          <b>Follow Up On:</b> <%= TouchpointPresenter.new(touchpoint).follow_up_on %>
-
-          <br>
-
-          <b>Source:</b> <%= touchpoint.source %>
-
-          <br>
-
-          <b>Result:</b> <%= touchpoint.result %>
-
-          <br>
-
-          <b>Created At:</b> <%= TouchpointPresenter.new(touchpoint).created_at %>
-        </p>
-
-        <%= link_to 'Show', touchpoint, class: 'card-link' %>
-        <%= link_to 'Edit', edit_touchpoint_path(touchpoint), class: 'card-link' %>
-        <%= link_to 'Delete',
-                    touchpoint,
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' },
-                    class: 'card-link' %>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'touchpoints/touchpoints', touchpoints: @touchpoints, title: false %>
 <% else %>
   <p class="text-muted">
     You don't have any touchpoints for this contact because you haven't

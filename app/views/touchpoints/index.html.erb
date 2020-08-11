@@ -3,7 +3,7 @@
 <% if @touchpoints.any? %>
   <p><%= link_to 'New Touchpoint', new_touchpoint_path %></p>
 
-  <%= render 'touchpoints', touchpoints: @touchpoints %>
+  <%= render 'touchpoints', touchpoints: @touchpoints, title: true %>
 <% else %>
   <%= render 'empty_state', any_contacts: @any_contacts %>
 <% end %>
