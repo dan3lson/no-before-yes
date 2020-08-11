@@ -9,6 +9,6 @@ RSpec.describe Goal, type: :model do
 
   context 'validations' do
     it { is_expected.to validate_presence_of(:target) }
-    it { is_expected.to validate_numericality_of(:target).greater_than(0) }
+    it { is_expected.to validate_numericality_of(:target).only_integer.is_greater_than(0) }
   end
 end
