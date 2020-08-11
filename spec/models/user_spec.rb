@@ -17,6 +17,7 @@ RSpec.describe User, type: :model do
 
   context 'instance methods' do
     context '#contacts?'
-    context '#active_goal'
+    context '#goal'
+    context '#goal?'
   end
 end

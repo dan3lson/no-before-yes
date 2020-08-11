@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :goal do
-    target { rand(50) }
-
+    target { rand(100) }
+    
     user
   end
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete '/sign_out' => "clearance/sessions#destroy", as: 'sign_out'
   get '/sign_up' => 'clearance/users#new', as: 'sign_up'
 
+  resources :goals, only: %i[new create]
   resources :stats, only: [:index]
   resource :dashboard, only: [:show], controller: 'dashboard'
   resources :touchpoints

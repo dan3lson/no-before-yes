@@ -1,0 +1,27 @@
+<%= form_with(model: goal, local: true) do |form| %>
+  <% if goal.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(goal.errors.count, "error") %> prohibited this goal from
+        being saved:
+      </h2>
+
+      <ul>
+        <% goal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :target %>
+    <%= form.number_field :target, class: 'form-control' %>
+  </div>
+
+  <div class="actions mb-1">
+    <%= form.submit 'Save', class: 'btn btn-primary btn-block' %>
+  </div>
+
+  <%= link_to 'Cancel', dashboard_path, class: 'btn btn-outline-primary btn-block' %>
+<% end %>

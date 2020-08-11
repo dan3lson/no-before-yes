@@ -14,7 +14,13 @@ class User < ApplicationRecord
     contacts.any?
   end
 
-  def active_goal
+  def goal
+    return if goals.empty?
+
     goals.latest.first
+  end
+
+  def goal?
+    !!goal
   end
 end

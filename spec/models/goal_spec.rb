@@ -9,7 +9,6 @@ RSpec.describe Goal, type: :model do
 
   context 'validations' do
     it { is_expected.to validate_presence_of(:target) }
+    it { is_expected.to validate_numericality_of(:target).greater_than(0) }
   end
-
-  context 'instance methods'
 end
