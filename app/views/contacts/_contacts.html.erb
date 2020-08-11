@@ -25,6 +25,7 @@
 
       <%= link_to 'Show', contact, class: 'card-link' %>
       <%= link_to 'Edit', edit_contact_path(contact), class: 'card-link' %>
+      <%= link_to 'New Touchpoint', new_contact_touchpoint_path(contact), class: 'card-link' %>
       <%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
     </div>
   </div>
