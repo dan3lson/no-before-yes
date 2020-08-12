@@ -2,7 +2,7 @@
 
 <p class="text-muted">We crunched some numbers for you.</p>
 
-<p>
+<div>
 	<h3>Contacts</h3>
 
 	<ul>
@@ -10,9 +10,9 @@
 		<li><strong>Overdue:</strong> <%= @stats.overdue_size %></li>
 		<li><strong>Untouched:</strong> <%= @stats.untouched_size %></li>
 	</ul>
-</p>
+</div>
 
-<p>
+<div>
 	<h3>Touchpoints</h3>
 
 	<ul>
@@ -21,15 +21,15 @@
 		<li><strong>Yes:</strong> <%= @stats.yes_size %></li>
 		<li><strong>Unknown:</strong> <%= @stats.unknown_size %></li>
 	</ul>
-</p>
+</div>
 
 <hr>
 
-<p>
+<div>
 	The number of noes you need to get one yes:
 	<% if @stats.noes_needed_for_one_yes.zero? %>
 	  <span class="text-muted">we need more data to calculate this for you.</span>
 	<% else %>
 	  <%= @stats.noes_needed_for_one_yes %>
 	<% end %>
-</p>
+</div>
