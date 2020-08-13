@@ -1,0 +1,19 @@
+<section id="introduction">
+	<h1>Thanks for giving us a chance.</h1>
+	<p class="lead">
+		Now, let's get started.
+  </p>
+  <p>
+		We push you to get your potential customers to tell you "No, I'm not
+		interested in your product." instead of "Yes, sign me up!".
+    It sounds crazy, but you'll understand why soon. Stick with us and we know
+    you'll become a better salesperson.
+	</p>
+
+  <%= link_to 'Next',
+              onboarding_path(step: :contacts),
+              method: :put,
+              remote: true,
+              role: 'button',
+              class: 'btn btn-primary' %>
+</section>

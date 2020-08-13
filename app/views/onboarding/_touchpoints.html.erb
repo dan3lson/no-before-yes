@@ -1,0 +1,18 @@
+<section id="touchpoints">
+  <h1>Touchpoints</h1>
+  <p class="lead">
+    Track your interactions and what to do next.
+  </p>
+  <p>
+    Every time you interact with your contacts, create a touchpoint so you have
+    a recap of what happened and know what next steps to take with this contact.
+    Your future self will thank you.
+  </p>
+
+  <%= link_to 'Next',
+              onboarding_path(step: :dashboard),
+              method: :put,
+              remote: true,
+              role: 'button',
+              class: 'btn btn-primary' %>
+</section>

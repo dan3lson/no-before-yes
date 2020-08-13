@@ -1,0 +1,16 @@
+<section id="contacts">
+  <h1>Create your first contact.</h1>
+  <p class="lead">
+    This is the beginning of your online roladex.
+    Don’t worry, you can create as many contacts as you want later.
+  </p>
+
+  <%= render 'contacts/form', contact: Contact.new %>
+
+  <%= link_to 'Next',
+              onboarding_path(step: :touchpoints),
+              method: :put,
+              remote: true,
+              role: 'button',
+              class: 'btn btn-primary' %>
+</section>
