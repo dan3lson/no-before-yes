@@ -10,6 +10,9 @@ class User < ApplicationRecord
 
 	validates :email, presence: true, uniqueness: { case_sensitive: false }
 
+  enum onboarding: { start: 0, contacts: 1, touchpoints: 2, dashboard: 3, finish: 4 },
+       _prefix: true
+
   def contacts?
     contacts.any?
   end
