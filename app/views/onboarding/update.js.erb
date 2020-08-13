@@ -1,0 +1,19 @@
+var nextStepPartial = "<%= j render(partial: "onboarding/#{@step}") %>";
+var $progressBar = $("#onboarding-progress-bar .progress-bar");
+var $onboarding = $("#onboarding");
+
+updateProgressBar();
+showNextStep();
+
+function updateProgressBar() {
+	var value = parseInt($progressBar.attr("aria-valuenow"));
+	value += 20;
+
+	$progressBar.attr("aria-valuenow", value)
+							.attr("style", "width: " + value + "%");
+};
+
+function showNextStep() {
+	$onboarding.empty();
+	$onboarding.hide().append(nextStepPartial).fadeIn("slow");
+}
