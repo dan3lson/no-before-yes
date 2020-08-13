@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'blog', to: 'static_pages#blog'
   get 'how_it_works', to: 'static_pages#how_it_works'
   get 'index', to: 'static_pages#index'
-  get 'onboarding', to: 'onboarding#index'
   get 'pricing', to: 'static_pages#pricing'
   get 'support', to: 'static_pages#support'
   get 'sign_in', to: 'clearance/sessions#new', as: 'sign_in'
@@ -19,7 +18,8 @@ Rails.application.routes.draw do
   end
   resource :dashboard, only: [:show], controller: 'dashboard'
   resources :goals, only: %i[new create]
-  resources :onboarding, only: [:index]
+  resources :onboarding, only: %i[index]
+  put 'onboarding', to: 'onboarding#update'
   resources :stats, only: [:index]
   resources :touchpoints
 
