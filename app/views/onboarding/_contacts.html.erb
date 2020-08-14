@@ -7,10 +7,5 @@
 
   <%= render 'contacts/form', contact: Contact.new %>
 
-  <%= link_to 'Next',
-              onboarding_path(step: :touchpoints),
-              method: :put,
-              remote: true,
-              role: 'button',
-              class: 'btn btn-primary' %>
+  <%= render 'next_button', next_step: :touchpoints %>
 </section>

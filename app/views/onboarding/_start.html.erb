@@ -1,4 +1,4 @@
-<section id="introduction">
+<section>
 	<h1>Thanks for giving us a chance.</h1>
 	<p class="lead">
 		Now, let's get started.
@@ -10,10 +10,5 @@
     you'll become a better salesperson.
 	</p>
 
-  <%= link_to 'Next',
-              onboarding_path(step: :contacts),
-              method: :put,
-              remote: true,
-              role: 'button',
-              class: 'btn btn-primary' %>
+  <%= render 'next_button', next_step: :contacts %>
 </section>
