@@ -3,7 +3,7 @@
 # DashboardController
 class DashboardController < ApplicationController
   before_action :set_onboarding_finished
-  
+
   def show
     @dashboard = DashboardPresenter.new(current_user)
   end
@@ -11,8 +11,10 @@ class DashboardController < ApplicationController
   private
 
   def set_onboarding_finished
-    @onboarding_finished = dashboard_params[:onboarding_finished] &&
+    finished_params = dashboard_params[:onboarding_finished] &&
       dashboard_params[:onboarding_finished] == 'true'
+
+    @onboarding_finished = finished_params && current_user.onboarding_finish?
   end
 
   def dashboard_params
