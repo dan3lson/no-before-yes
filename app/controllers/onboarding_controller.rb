@@ -21,7 +21,6 @@ class OnboardingController < ApplicationController
   def redirect_to_dashboard?
     return unless current_user.onboarding_finish?
 
-    flash[:info] = 'Already completed; if you need help, visit the Support page.'
-    redirect_to dashboard_path
+    redirect_to dashboard_path(onboarding_finished: true)
   end
 end
