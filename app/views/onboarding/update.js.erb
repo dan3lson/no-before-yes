@@ -1,4 +1,4 @@
-var nextStepPartial = "<%= j render(partial: "onboarding/#{@step}") %>";
+var nextStepPartial = "<%= j render(partial: "onboarding/#{@step}", locals: { contact: @contact }) %>";
 var $progressBar = $("#onboarding-progress-bar .progress-bar");
 var $onboarding = $("#onboarding");
 

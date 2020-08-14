@@ -8,6 +8,7 @@ class OnboardingController < ApplicationController
 
   def update
     @step = params[:step]
+    @contact = Contact.new if @step == 'contacts'
     onboarding_enum = "onboarding_#{@step}!"
 
     current_user.send(onboarding_enum)

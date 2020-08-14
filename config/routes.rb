@@ -18,7 +18,14 @@ Rails.application.routes.draw do
   end
   resource :dashboard, only: [:show], controller: 'dashboard'
   resources :goals, only: %i[new create]
-  resources :onboarding, only: %i[index]
+  resources :onboarding, only: %i[index] do
+    collection do
+      resources :contacts,
+                controller: 'onboarding/contacts',
+                only: [:create],
+                as: 'onboarding_contacts'
+    end
+  end
   put 'onboarding', to: 'onboarding#update'
   resources :stats, only: [:index]
   resources :touchpoints

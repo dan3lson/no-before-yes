@@ -1,11 +1,13 @@
 <section id="contacts">
-  <h1>Create your first contact.</h1>
+  <h1>Contacts</h1>
   <p class="lead">
-    This is the beginning of your online roladex.
-    Don’t worry, you can create as many contacts as you want later.
+    Let's create your first contact &mdash; this is the beginning of your
+    online roladex. Don’t worry, you can create as many contacts as you want
+    later.
   </p>
 
-  <%= render 'contacts/form', contact: Contact.new %>
-
-  <%= render 'next_button', next_step: :touchpoints %>
+  <%= render 'contacts/form',
+             model: [:onboarding, contact],
+             contact: contact,
+             local: false %>
 </section>

@@ -1,0 +1,28 @@
+var saved = "<%= @saved %>";
+
+if (saved == "true") {
+	var nextStepPartial = "<%= j render(partial: "onboarding/touchpoints") %>";
+	var $progressBar = $("#onboarding-progress-bar .progress-bar");
+	var $onboarding = $("#onboarding");
+
+	updateProgressBar();
+	showNextStep();
+} else {
+	var errorsPartial = "<%= j render(partial: "shared/form_errors", locals: { object: @contact }) %>";
+
+  $("#error_explanation").remove();
+	$("form").prepend(errorsPartial);
+}
+
+function updateProgressBar() {
+	var value = parseInt($progressBar.attr("aria-valuenow"));
+	value += 20;
+
+	$progressBar.attr("aria-valuenow", value)
+							.attr("style", "width: " + value + "%");
+};
+
+function showNextStep() {
+	$onboarding.empty();
+	$onboarding.hide().append(nextStepPartial).fadeIn("slow");
+}
