@@ -3,12 +3,11 @@
   <%= render 'layouts/head' %>
 
   <body>
-    <%= render 'layouts/navbar/navbar' %>
+    <div id="onboarding-progress-bar" class="mb-5">
+      <%= render 'onboarding/progress_bar' %>
+    </div>
 
     <div class="container">
-      <%= render 'onboarding/unfinished_alert' %>
-      <%= render 'layouts/flashes' %>
-
       <%= yield %>
     </div>
   </body>

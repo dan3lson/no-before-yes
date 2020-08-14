@@ -1,0 +1,8 @@
+<% unless current_user.onboarding_finish? %>
+  <div class="alert alert-info">
+    <%= link_to 'Complete the Onboarding',
+  	            onboarding_index_path,
+  							class: 'alert-link' %> to become
+  	acquainted with No Before Yes.
+  </div>
+<% end %>

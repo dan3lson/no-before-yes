@@ -1,0 +1,8 @@
+<% if finished %>
+  <div class="alert alert-info">
+    You already went through the Onboarding flow. If you need more help, please
+    <%= link_to ' visit the Support page',
+  	            support_path,
+  							class: 'alert-link' %>.
+  </div>
+<% end %>

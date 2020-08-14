@@ -30,6 +30,10 @@ class UsersController < Clearance::UsersController
 
   private
 
+  def url_after_create
+    onboarding_index_path
+  end
+
   def set_user
     @user = User.find(params[:id])
   end
