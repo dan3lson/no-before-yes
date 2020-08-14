@@ -7,6 +7,7 @@ module Onboarding
       @contact = current_user.contacts.new(contact_params)
 
       @saved = @contact.save
+      current_user.onboarding_touchpoints! if @saved
     end
 
     private
