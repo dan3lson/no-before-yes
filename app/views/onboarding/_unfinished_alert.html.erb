@@ -1,4 +1,4 @@
-<% unless current_user.onboarding_finish? %>
+<% if signed_in? && !current_user.onboarding_finish? %>
   <div class="alert alert-info">
     <%= link_to 'Complete the Onboarding',
   	            onboarding_index_path,
