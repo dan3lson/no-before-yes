@@ -5,7 +5,7 @@ class Contact < ApplicationRecord
   belongs_to :user
   has_many :touchpoints, dependent: :restrict_with_error
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: { scope: :user_id }
 
   scope :by_name, -> { order(:name) }
   scope :untouched, -> { select { |contact| contact.touchpoints.empty? } }
