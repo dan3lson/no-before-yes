@@ -37,4 +37,4 @@
 						@touchpoint,
 						method: :delete,
 						data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'New Touchpoint', new_touchpoint_path %>
+<%= link_to 'New Touchpoint', new_contact_touchpoint_path(@touchpoint.contact) %>
