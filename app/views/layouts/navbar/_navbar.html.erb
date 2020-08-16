@@ -10,12 +10,14 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
-		<span class="navbar-text mr-auto">
-			<%= link_to 'Inspired by Go For No!',
-			            about_path,
-									class: 'text-muted' %>
-		</span>
-		<ul class="navbar-nav">
+		<% if !signed_in? %>
+			<span class="navbar-text">
+				<%= link_to 'Inspired by Go For No!',
+				            about_path,
+										class: 'text-muted' %>
+			</span>
+		<% end %>
+		<ul class="navbar-nav ml-auto">
 			<% if signed_in? %>
 			  <%= render 'layouts/navbar/customer_links' %>
 			<% else %>
