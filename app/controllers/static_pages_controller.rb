@@ -4,7 +4,7 @@
 class StaticPagesController < ApplicationController
   skip_before_action :require_login
 
-  def index
+  def homepage
     redirect_to dashboard_path if signed_in?
   end
 

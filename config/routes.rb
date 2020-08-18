@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'static_pages#index'
+  root 'static_pages#homepage'
 
   get 'about', to: 'static_pages#about'
   get 'blog', to: 'static_pages#blog'
