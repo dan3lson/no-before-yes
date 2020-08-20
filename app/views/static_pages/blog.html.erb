@@ -1,28 +1,27 @@
 <%= render 'shared/page_title',
            page_title: 'Blog | Learn how to boost your confidence and get more sales results.' %>
-
+<div class="alert alert-info">
+  Our first blog post will be published on Thursday, August 27th!
+</div>
 <h1 class="mb-3">Blog</h1>
+<p class="lead">
+  Join the discussion and get tips on how to build your confidence and exceed
+  your sales goals. We publish new posts at least once a week &mdash;
+  <%= link_to 'subscribe now', support_path %> and we'll email the goods to you
+  directly.
+</p>
 
+<h2 class="mb-3">Upcoming Posts</h2>
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-primary text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'book-reader' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize 'Nothing seemed to change, until I reread Go for No! 4 years later' %>
+    </h3>
   </div>
 </div>
 
@@ -31,23 +30,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-secondary text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'file-signature' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize "Why being told 'yes' slows you down" %>
+    </h3>
   </div>
 </div>
 
@@ -56,23 +45,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-success text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'chart-line' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize "The most important mental change you’ll make in your sales career" %>
+    </h3>
   </div>
 </div>
 
@@ -81,23 +60,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-purple text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'traffic-light' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize 'Why your CRM holds you back' %>
+    </h3>
   </div>
 </div>
 
@@ -106,23 +75,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-danger text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'child' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize 'How to make your CRM work for you' %>
+    </h3>
   </div>
 </div>
 
@@ -131,23 +90,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-warning text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'address-book' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize 'Why your motivation will eventually run dry' %>
+    </h3>
   </div>
 </div>
 
@@ -156,23 +105,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-dark text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'arrows-alt' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize '5 ways to shift your expectations' %>
+    </h3>
   </div>
 </div>
 
@@ -181,23 +120,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-indigo text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'bullseye' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize 'Why you never surpass your sales quota' %>
+    </h3>
   </div>
 </div>
 
@@ -206,23 +135,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-teal text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'calendar-check' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize "How to build a daily routine you'd actually enjoy" %>
+    </h3>
   </div>
 </div>
 
@@ -231,23 +150,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-cyan text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'frown' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
-    <h2>
-      <%= link_to 'Title', '#' %>
-    </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
+    <h3>
+      <%= titleize "Why you don’t enjoy the sales process" %>
+    </h3>
   </div>
 </div>
 
@@ -256,23 +165,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-pink text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'utensils' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
     <h2>
-      <%= link_to 'Title', '#' %>
+      <%= titleize '3 ways to always stay hungry for results' %>
     </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
   </div>
 </div>
 
@@ -281,23 +180,13 @@
 <div class="row">
   <div class="col-4 col-md-3 mb-3">
     <div class="text-center bg-orange text-white" style="font-size: 5rem;">
-      <i class="fas fa-phone"></i>
+      <%= fa_icon 'times' %>
     </div>
   </div>
   <div class="col-8 col-md-5">
     <h2>
-      <%= link_to 'Title', '#' %>
+      <%= titleize "Why every CRM out there just didn't do it for me" %>
     </h2>
-    <p>
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-      No Before Yes
-    </p>
   </div>
 </div>
 

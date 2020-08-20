@@ -14,4 +14,8 @@ module ApplicationHelper
 
 		'active'
 	end
+
+	def fa_icon(name)
+		content_tag :i, nil, class: "fas fa-#{name}"
+	end
 end
