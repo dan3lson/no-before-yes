@@ -1,5 +1,42 @@
 <%= render 'shared/page_title',
-           page_title: 'How It Works | A very simple way to help you get results.' %>
+           page_title: 'How It Works | The daily ins and outs for better results.' %>
 
-<h1>StaticPages#how_it_works</h1>
-<p>Find me in app/views/static_pages/how_it_works.html.erb</p>
+<h1>How It Works</h1>
+<p class="lead">
+  No Before Yes tracks the number of times you fail to land a customer and
+  also functions as a simple CRM to lead you through the follow-up process.
+</p>
+
+<div class="text-center">
+  <div>
+    <h1><%= fa_icon 'bullseye' %></h1>
+    <p>Set goals for how many noes to get every week</p>
+  </div>
+  <div class="mt-3 mb-3">
+    <h5 class="text-secondary"><%= fa_icon 'arrows-alt-v' %></h5>
+  </div>
+  <div>
+    <h1><%= fa_icon 'address-book' %></h1>
+    <p>Create contacts to build your customer base</p>
+  </div>
+  <div class="mt-3 mb-3">
+    <h5 class="text-secondary"><%= fa_icon 'arrows-alt-v' %></h5>
+  </div>
+  <div>
+    <h1><%= fa_icon 'edit' %></h1>
+    <p>Save your interactions with a contact and plan next steps with touchpoints</p>
+  </div>
+
+  <p class="mt-5">
+    Your Dashboard will guide you through weekly
+    action items while your numbers will be crunched and trends
+    displayed on the Stats page.
+  </p>
+
+  <div class="mb-3">
+    <%= link_to 'Try it FREE',
+                sign_up_path,
+                role: 'button',
+                class: 'btn btn-primary btn-lg' %>
+  </div>
+</div>
