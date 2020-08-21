@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   resources :touchpoints
 
   resources :passwords, controller: 'clearance/passwords', only: %i[create new]
-  resource :session, controller: 'clearance/sessions', only: [:create]
+  resource :session, controller: 'sessions', only: [:create]
 
   resources :users do
     resource :password,
