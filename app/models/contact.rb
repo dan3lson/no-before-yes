@@ -11,6 +11,7 @@ class Contact < ApplicationRecord
               scope: :user_id,
               message: 'already exists in your Contacts list'
             }
+  after_validation :report_validation_errors_to_rollbar
 
   scope :by_name, -> { order(:name) }
   scope :untouched, -> { select { |contact| contact.touchpoints.empty? } }
