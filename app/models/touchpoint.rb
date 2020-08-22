@@ -9,7 +9,6 @@ class Touchpoint < ApplicationRecord
   validates :follow_up_on, presence: true
   validates :source, presence: true
   validates :result, presence: true
-  after_validation :report_validation_errors_to_rollbar
 
   enum source: { phone: 0, email: 1, in_person: 2 }
   enum result: { unknown: 0, no: 1, yes: 2 }

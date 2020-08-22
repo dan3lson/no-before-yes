@@ -11,7 +11,6 @@ class User < ApplicationRecord
   has_many :events, class_name: 'Ahoy::Event'
 
 	validates :email, presence: true, uniqueness: { case_sensitive: false }
-  after_validation :report_validation_errors_to_rollbar
 
   enum onboarding: { start: 0, contacts: 1, touchpoints: 2, dashboard: 3, finish: 4 },
        _prefix: true
