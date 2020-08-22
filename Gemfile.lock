@@ -185,7 +185,6 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rollbar (2.27.0)
     rspec-core (3.9.2)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
@@ -269,7 +268,6 @@ DEPENDENCIES
   pry-rails (~> 0.3.9)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
-  rollbar
   rspec-rails (~> 3.9.0)
   sass-rails (>= 6)
   shoulda-matchers!
