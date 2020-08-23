@@ -28,4 +28,8 @@ class User < ApplicationRecord
   def goal?
     !!goal
   end
+
+  def free_trial_expires_at
+    created_at + 30.days
+  end
 end

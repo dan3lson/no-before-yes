@@ -1,0 +1,64 @@
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">Free (30-Day Trial)</h4>
+    </div>
+    <div class="card-body">
+      <h1 class="card-title pricing-card-title">$0</h1>
+      <ul class="list-unstyled mt-3 mb-4">
+        <li><%= fa_icon 'check' %> Unlimited contacts</li>
+        <li><%= fa_icon 'check' %> Unlimited touchpoints</li>
+        <li><%= fa_icon 'check' %> Goals</li>
+        <li><%= fa_icon 'check' %> Analytics</li>
+        <li><%= fa_icon 'check' %> Reports</li>
+        <li><%= fa_icon 'check' %> Notifications</li>
+        <li><%= fa_icon 'check' %> Email support</li>
+        <li><%= fa_icon 'check' %> Help center access</li>
+      </ul>
+
+      <% if show_buttons %>
+        <%= link_to sign_up_path, class: "btn btn-lg btn-block btn-outline-primary" do %>
+          Start a 30-day free trial
+          <br>
+          <small>no credit card required; cancel anytime</small>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">Professional</h4>
+    </div>
+    <div class="card-body">
+      <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+      <ul class="list-unstyled mt-3 mb-4">
+        <li><%= fa_icon 'plus' %> Everything in Free</li>
+        <li><%= fa_icon 'check' %> Import contacts via CSV</li>
+      </ul>
+
+      <% if show_buttons %>
+			  <%= link_to 'Get started', sign_up_path, class: "btn btn-lg btn-block btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">Business</h4>
+    </div>
+    <div class="card-body">
+      <h1 class="card-title pricing-card-title">$99 <small class="text-muted">/ mo</small></h1>
+      <ul class="list-unstyled mt-3 mb-4">
+        <li><%= fa_icon 'plus' %> Everything in Professional</li>
+        <li><%= fa_icon 'check' %> Unlimited users</li>
+        <li><%= fa_icon 'check' %> Activity Feed</li>
+        <li><%= fa_icon 'check' %> Private Zoom Team Kick-Off Training with Andrea Waltz</li>
+      </ul>
+
+      <% if show_buttons %>
+        <%= link_to 'Contact us', support_path, class: "btn btn-lg btn-block btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

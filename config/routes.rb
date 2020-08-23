@@ -38,4 +38,6 @@ Rails.application.routes.draw do
              controller: 'clearance/passwords',
              only: %i[edit update]
   end
+
+  resource :billing, only: [:show], controller: 'billing'
 end
