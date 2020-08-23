@@ -1,27 +1,26 @@
 <%= render 'shared/page_title',
            page_title: 'Billing | Manage your monthly subscription plan' %>
 
-<h1>Billing</h1>
-
-<div class="card mb-5">
-  <div class="card-body">
-    <h5 class="card-title">Current plan: Free (30-Day Trial)</h5>
-		<div class="alert alert-warning" role="alert">
-			<%= fa_icon 'exclamation-triangle' %>
-			Your free trial lasts until midnight on
-			<%= format_date(@free_trial_expires_at) %>.
-		</div>
-		<p class="card-text">
-			Email us to sign up for a paid plan which works best for you or your
-			business. Cancel your monthly subscription plan at any time.
-		</p>
-		<%= mail_to 'billing@nobeforeyes.com',
-								'Upgrade now',
-								subject: 'Upgrade My Subscription',
-								role: 'button',
-								class: 'btn btn-primary btn-lg' %>
+<h1 class="mb-3">Billing</h1>
+<div class="mb-5">
+  <p>Current subscription plan: Free (30-Day Trial)</p>
+  <div class="alert alert-warning" role="alert">
+    <%= fa_icon 'exclamation-triangle' %>
+    Your free trial lasts until midnight on
+    <%= format_date(@free_trial_expires_at) %>.
   </div>
+  <p class="card-text">
+    Email us to sign up for a paid plan which works best for you or your
+    business. Cancel your monthly subscription plan at any time.
+  </p>
+  <%= mail_to 'billing@nobeforeyes.com',
+              'Upgrade now',
+              subject: 'Upgrade My Subscription',
+              role: 'button',
+              class: 'btn btn-primary btn-lg' %>
 </div>
+
+<hr>
 
 <div>
 	<p>As a reminder, here are the pricing details:</p>
