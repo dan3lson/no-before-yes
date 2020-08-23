@@ -11,7 +11,11 @@ RSpec.describe Contact, type: :model do
   context 'validations' do
     it { is_expected.to validate_presence_of(:name) }
     subject { create(:contact) }
-    it { is_expected.to validate_uniqueness_of(:name).scoped_to(:user_id) }
+    it do
+      is_expected.to validate_uniqueness_of(:name).
+        scoped_to(:user_id).
+        with_message('already exists in your Contacts list')
+    end
   end
 
   describe 'scopes' do
