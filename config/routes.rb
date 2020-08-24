@@ -40,4 +40,9 @@ Rails.application.routes.draw do
   end
 
   resource :billing, only: [:show], controller: 'billing'
+
+  namespace :admin do
+    get 'insights'
+    get 'kpis'
+  end
 end
