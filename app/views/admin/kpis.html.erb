@@ -3,24 +3,30 @@
 	What is one thing you can do today to eventually improve this data?
 </p>
 
-<h2 class="mb-3">Weekly Growth</h2>
+<h2 class="mb-3">Engagement</h2>
+<p>
+	Show by:
+	<%= link_to 'Day', admin_kpis_path(show_by: :day) %> |
+	<%= link_to 'Week', admin_kpis_path(show_by: :week) %> |
+	<%= link_to 'Month', admin_kpis_path(show_by: :month) %>
+</p>
 
 <div class="mb-5">
 	<h3>Touchpoints</h3>
-	<%= line_chart Touchpoint.group_by_week(:created_at).count %>
+	<%= line_chart Touchpoint.send(@group_by, :created_at).count %>
 </div>
 
 <div class="mb-5">
 	<h3>Contacts</h3>
-	<%= line_chart Contact.group_by_week(:created_at).count %>
+	<%= line_chart Contact.send(@group_by, :created_at).count %>
 </div>
 
 <div class="mb-5">
 	<h3>Visits</h3>
-	<%= line_chart Ahoy::Visit.group_by_week(:started_at).count %>
+	<%= line_chart Ahoy::Visit.send(@group_by, :started_at).count %>
 </div>
 
 <div class="mb-5">
 	<h3>Events</h3>
-	<%= line_chart Ahoy::Event.group_by_week(:time).count %>
+	<%= line_chart Ahoy::Event.send(@group_by, :time).count %>
 </div>
