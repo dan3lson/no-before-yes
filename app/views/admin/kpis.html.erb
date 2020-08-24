@@ -1,0 +1,26 @@
+<h1>Key Performance Indicators</h1>
+<p class="lead text-muted">
+	What is one thing you can do today to eventually improve this data?
+</p>
+
+<h2 class="mb-3">Weekly Growth</h2>
+
+<div class="mb-5">
+	<h3>Touchpoints</h3>
+	<%= line_chart Touchpoint.group_by_week(:created_at).count %>
+</div>
+
+<div class="mb-5">
+	<h3>Contacts</h3>
+	<%= line_chart Contact.group_by_week(:created_at).count %>
+</div>
+
+<div class="mb-5">
+	<h3>Visits</h3>
+	<%= line_chart Ahoy::Visit.group_by_week(:started_at).count %>
+</div>
+
+<div class="mb-5">
+	<h3>Events</h3>
+	<%= line_chart Ahoy::Event.group_by_week(:time).count %>
+</div>

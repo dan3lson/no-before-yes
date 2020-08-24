@@ -1,0 +1,26 @@
+<h1>Platform Insights</h1>
+<p class="lead text-muted">
+	What does the data tell you?
+</p>
+
+<h2 class="mb-3">Touchpoints</h2>
+<h3>By Result</h3>
+<%= pie_chart Touchpoint.group(:result).count %>
+
+<h3>By Source</h3>
+<%= pie_chart Touchpoint.group(:source).count %>
+
+<h2 class="mb-3">Goals by Target</h2>
+<%= pie_chart Goal.group(:target).count %>
+
+<h2 class="mb-3">Weekly Growth</h2>
+
+<div class="mb-5">
+	<h3>Users</h3>
+	<%= line_chart User.group_by_week(:created_at).count %>
+</div>
+
+<div class="mb-5">
+	<h3>Goals</h3>
+	<%= line_chart Goal.group_by_week(:created_at).count %>
+</div>
