@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root 'static_pages#homepage'
 
   get 'about', to: 'static_pages#about'
-  get 'blog', to: 'static_pages#blog'
+  controller :blog do
+    get 'blog', to: 'blog#index'
+    get 'blog/august-28-nothing-seemed-to-change-four-years-later', :august_28_nothing_seemed_to_change
+  end
   get 'how_it_works', to: 'static_pages#how_it_works'
   get 'index', to: 'static_pages#index'
   get 'pricing', to: 'static_pages#pricing'
