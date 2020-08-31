@@ -2,7 +2,7 @@
 
 # AdminPolicy
 class AdminPolicy < Struct.new(:user, :admin)
-	FOUNDERS = %w[danelson@greatawait.com]
+	FOUNDERS = %w[danelson@greatawait.com andrea@goforno.com]
 
   def insights?
     owner?
