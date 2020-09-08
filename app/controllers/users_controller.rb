@@ -23,7 +23,7 @@ class UsersController < Clearance::UsersController
   end
 
   def update
-    if @user.update(user_params)
+    if @user.update(user_params.except(:email))
       flash[:success] = 'User was successfully updated.'
 
       redirect_to @user
