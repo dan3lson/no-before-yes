@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require 'resque/server'
+require 'resque/scheduler'
+require 'resque/scheduler/server'
+
 Rails.application.routes.draw do
   root 'static_pages#homepage'
 
@@ -48,4 +52,6 @@ Rails.application.routes.draw do
     get 'insights'
     get 'kpis'
   end
+
+  mount Resque::Server.new, at: '/resque'
 end
