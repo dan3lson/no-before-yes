@@ -8,7 +8,18 @@ class UsersController < Clearance::UsersController
     @users = User.all
   end
 
-  def show
+  def show; end
+
+  def create
+    @user = user_from_params
+
+    if @user.save
+      sign_in @user
+      UserMailer.with(user: @user).welcome.deliver_later if @user
+      redirect_back_or onboarding_index_path
+    else
+      render template: 'users/new'
+    end
   end
 
   def update
@@ -29,10 +40,6 @@ class UsersController < Clearance::UsersController
   end
 
   private
-
-  def url_after_create
-    onboarding_index_path
-  end
 
   def set_user
     @user = User.find(params[:id])
