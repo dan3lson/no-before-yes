@@ -17,6 +17,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'pundit'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+gem 'redis', '~> 4.0'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
@@ -24,7 +25,6 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
-# gem 'redis', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
