@@ -1,4 +1,4 @@
-your_week_at_a_glance:
+monday_prep:
   description: 'Show users what this new week has in store for them'
   cron: '0 * * * *' # every hour
   queue: normal
