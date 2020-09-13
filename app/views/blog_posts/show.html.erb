@@ -1,0 +1,8 @@
+<%= render 'shared/page_title',
+           page_title: "No Before Yes | Blog: #{@blog_post.title}" %>
+
+<%= render 'blog_posts/show', blog_post: @blog_post %>
+
+<div class="mb-3">
+	<%= link_to 'Read another blog post', blog_posts_path %>
+</div>

@@ -1,0 +1,7 @@
+<div class="text-center bg-<%= @blog_post.bg_color %> text-white mb-3 blog-icon">
+	<%= fa_icon @blog_post.icon %>
+</div>
+<h3><%= @blog_post.title %></h3>
+<p><%= BlogPostPresenter.new(@blog_post).publish_on %></p>
+
+<p>Content goes here!</p>

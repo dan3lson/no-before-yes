@@ -1,0 +1,14 @@
+<% blog_posts.each do |blog_post| %>
+	<div class="mb-5">
+		<div class="row">
+			<div class="col-4 col-md-3 mb-3">
+				<div class="text-center bg-<%= blog_post.bg_color %> text-white blog-icon">
+					<%= fa_icon blog_post.icon %>
+				</div>
+			</div>
+			<div class="col-8 col-md-5">
+				<h3><%= link_to blog_post.title, blog_post %></h3>
+			</div>
+		</div>
+	</div>
+<% end %>

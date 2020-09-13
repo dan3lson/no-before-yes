@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :goals, dependent: :destroy
   has_many :visits, class_name: 'Ahoy::Visit'
   has_many :events, class_name: 'Ahoy::Event'
+  has_many :blog_posts, dependent: :restrict_with_error
 
 	validates :email, presence: true, uniqueness: { case_sensitive: false }
 

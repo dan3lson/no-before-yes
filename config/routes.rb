@@ -5,13 +5,13 @@ require 'resque/scheduler'
 require 'resque/scheduler/server'
 
 Rails.application.routes.draw do
+  #
+  # Guests
+  #
+
   root 'static_pages#homepage'
 
   get 'about', to: 'static_pages#about'
-  controller :blog do
-    get 'blog', to: 'blog#index'
-    get 'blog/august-28-nothing-seemed-to-change-four-years-later', :august_28_nothing_seemed_to_change
-  end
   get 'how_it_works', to: 'static_pages#how_it_works'
   get 'index', to: 'static_pages#index'
   get 'pricing', to: 'static_pages#pricing'
@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   get 'sign_in', to: 'clearance/sessions#new', as: 'sign_in'
   delete 'sign_out', to: 'clearance/sessions#destroy', as: 'sign_out'
   get 'sign_up', to: 'clearance/users#new', as: 'sign_up'
+  resources :blog_posts, only: %i[index show], path: :blog
+
+  #
+  # Customers
+  #
 
   resources :contacts do
     resources :touchpoints, only: %i[new create], controller: 'contacts/touchpoints'
@@ -48,9 +53,14 @@ Rails.application.routes.draw do
 
   resource :billing, only: [:show], controller: 'billing'
 
+  #
+  # Administrators
+  #
+
   namespace :admin do
     get 'insights'
     get 'kpis'
+    resources :blog_posts, path: :blog
   end
 
   mount Resque::Server.new, at: '/resque'

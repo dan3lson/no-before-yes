@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_185025) do
+ActiveRecord::Schema.define(version: 2020_09_12_150302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -56,6 +56,19 @@ ActiveRecord::Schema.define(version: 2020_08_21_185025) do
     t.datetime "started_at"
     t.index ["user_id"], name: "index_ahoy_visits_on_user_id"
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
+  end
+
+  create_table "blog_posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "bg_color", null: false
+    t.string "icon", null: false
+    t.string "title", null: false
+    t.integer "status", default: 0, null: false
+    t.date "publish_on"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["title"], name: "index_blog_posts_on_title", unique: true
+    t.index ["user_id"], name: "index_blog_posts_on_user_id"
   end
 
   create_table "contacts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -106,6 +119,7 @@ ActiveRecord::Schema.define(version: 2020_08_21_185025) do
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
+  add_foreign_key "blog_posts", "users"
   add_foreign_key "contacts", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "touchpoints", "contacts"
