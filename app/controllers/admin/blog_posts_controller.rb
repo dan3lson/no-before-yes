@@ -52,7 +52,9 @@ module Admin
     end
 
     def blog_post_params
-      params.require(:blog_post).permit(:bg_color, :icon, :title, :status, :publish_on, :user_id)
+      params.
+        require(:blog_post).
+        permit(:bg_color, :icon, :title, :content, :status, :publish_on, :user_id)
     end
   end
 end

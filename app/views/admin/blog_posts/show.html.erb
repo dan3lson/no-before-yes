@@ -1,4 +1,6 @@
-<%= render 'blog_posts/show', blog_post: @blog_post %>
+<div class="mb-3">
+	<%= link_to 'Edit', edit_admin_blog_post_path(@blog_post) %> |
+	<%= link_to 'View all posts', admin_blog_posts_path %>
+</div>
 
-<%= link_to 'Edit', edit_admin_blog_post_path(@blog_post) %> |
-<%= link_to 'Back to all blog posts', admin_blog_posts_path %>
+<%= render 'blog_posts/show', blog_post: @blog_post %>

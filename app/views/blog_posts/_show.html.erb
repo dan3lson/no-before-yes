@@ -4,4 +4,6 @@
 <h3><%= @blog_post.title %></h3>
 <p><%= BlogPostPresenter.new(@blog_post).publish_on %></p>
 
-<p>Content goes here!</p>
+<div class="mb-3">
+	<%= @blog_post.content %>
+</div>

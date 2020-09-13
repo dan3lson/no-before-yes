@@ -8,6 +8,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("chartkick")
 require("chart.js")
+require("trix")
+require("@rails/actiontext")
 
 import "bootstrap"
 import "../stylesheets/application"

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class BlogPost < ApplicationRecord
+  has_rich_text :content
+
   belongs_to :publisher, foreign_key: :user_id, class_name: :User
 
   enum status: { unpublished: 0, published: 1, upcoming: 2 }
