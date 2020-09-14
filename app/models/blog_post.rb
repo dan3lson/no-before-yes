@@ -19,7 +19,7 @@ class BlogPost < ApplicationRecord
 
   scope :latest, -> { order(publish_on: :desc)}
 
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: :history
 
   private
 
