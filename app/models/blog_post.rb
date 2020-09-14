@@ -26,4 +26,8 @@ class BlogPost < ApplicationRecord
   def titleize_title
     self.title = title.titleize
   end
+
+  def should_generate_new_friendly_id?
+    title_changed? || super
+  end
 end
