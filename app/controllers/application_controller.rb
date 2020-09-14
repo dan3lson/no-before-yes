@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   before_action :require_login
 	around_action :set_time_zone, if: :current_user
-  after_action :track_action
+  after_action :track_action, if: proc { Rails.env.production? }
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
