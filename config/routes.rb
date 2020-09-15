@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require 'resque/server'
-require 'resque/scheduler'
-require 'resque/scheduler/server'
-
 Rails.application.routes.draw do
   #
   # Guests
@@ -63,5 +59,4 @@ Rails.application.routes.draw do
     resources :blog_posts, path: :blog
   end
 
-  mount Resque::Server.new, at: '/resque'
 end
