@@ -9,4 +9,6 @@ class Goal < ApplicationRecord
             numericality: { only_integer: true, greater_than: 0 }
 
   scope :latest, -> { order(created_at: :desc) }
+
+  DEFAULT_TARGET = 5
 end
