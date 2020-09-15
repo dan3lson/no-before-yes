@@ -2,9 +2,9 @@
 
 # Enqueues the UserMailer#monday_prep email to all users.
 class MondayPrepJob
-	@queue = :normal
+	queue_as :normal
 
-	def self.perform
+	def perform
     users.each do |user|
 			UserMailer.with(user: user).monday_prep.deliver_later
 		end
@@ -12,7 +12,7 @@ class MondayPrepJob
 
 	private
 
-	def self.users
+	def users
 		User.all
 	end
 end
