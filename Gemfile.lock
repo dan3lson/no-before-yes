@@ -97,6 +97,7 @@ GEM
       railties (>= 5.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.6)
+    connection_pool (2.2.3)
     crass (1.0.6)
     css_parser (1.7.1)
       addressable
@@ -236,6 +237,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sidekiq (6.1.2)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -300,6 +305,7 @@ DEPENDENCIES
   rspec-rails (~> 3.9.0)
   sass-rails (>= 6)
   shoulda-matchers!
+  sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
