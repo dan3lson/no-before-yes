@@ -2,6 +2,8 @@
 
 # UserMailer sends general emails to users.
 class UserMailer < ApplicationMailer
+	default template_path: "mailers/#{name.underscore}"
+
 	def welcome
 		@user = params[:user]
 
@@ -11,6 +13,6 @@ class UserMailer < ApplicationMailer
 	def monday_prep
 		@user = params[:user]
 
-		mail to: @user.email, subject: 'Get ready for this week'
+		mail to: @user.email, subject: 'Your week at a glance'
 	end
 end
