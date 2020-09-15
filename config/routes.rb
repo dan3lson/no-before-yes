@@ -59,4 +59,8 @@ Rails.application.routes.draw do
     resources :blog_posts, path: :blog
   end
 
+  # Job Scheduler
+  require 'sidekiq/web'
+  require 'sidekiq-scheduler/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
