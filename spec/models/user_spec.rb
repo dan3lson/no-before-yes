@@ -29,6 +29,7 @@ RSpec.describe User, type: :model do
     describe '#goal'
     describe '#goal?'
     describe '#free_trial_expires_at'
+    describe '#admin?'
   end
 
   describe 'scopes' do

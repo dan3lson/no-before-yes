@@ -35,4 +35,10 @@ class User < ApplicationRecord
   def free_trial_expires_at
     created_at + 30.days
   end
+
+  def admin?
+    admins = %w[danelson@greatawait.com andrea@goforno.com danelson@nobeforeyes.com]
+
+    admins.include?(email)
+  end
 end
