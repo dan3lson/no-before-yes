@@ -2,11 +2,10 @@ require 'rails_helper'
 
 RSpec.describe UserMailer, type: :mailer do
   let!(:user) { create(:user) }
-  let(:mail) { UserMailer.with(user: user) }
   let(:from_address) { 'hello@nobeforeyes.com' }
 
   context '#welcome' do
-    before { mail.welcome }
+    let(:mail) { UserMailer.with(user: user).welcome }
 
     it 'renders the headers' do
       expect(mail.subject).to eq('Thanks for signing up')
