@@ -12,12 +12,11 @@ class BlogPost < ApplicationRecord
   validates :bg_color, presence: true
   validates :icon, presence: { message: 'must have a Font Awesome icon name' }
   validates :title, presence: true, uniqueness: { case_sensitive: false }
-  validates :slug, presence: true, uniqueness: { case_sensitive: false }
   validates :publish_on, presence: true, if: :published?
 
   before_save :titleize_title
 
-  scope :latest, -> { order(publish_on: :desc)}
+  scope :latest, -> { order(publish_on: :desc) }
 
   friendly_id :title, use: :history
 

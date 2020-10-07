@@ -25,7 +25,6 @@ RSpec.describe BlogPost, type: :model do
     it { is_expected.to validate_presence_of(:title) }
     subject { create(:blog_post) }
     it { is_expected.to validate_uniqueness_of(:title).case_insensitive }
-    it { is_expected.to validate_uniqueness_of(:slug).case_insensitive }
 
     describe 'publish_on' do
       context 'when status is unpublished' do
