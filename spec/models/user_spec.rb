@@ -30,4 +30,8 @@ RSpec.describe User, type: :model do
     describe '#goal?'
     describe '#free_trial_expires_at'
   end
+
+  describe 'scopes' do
+    describe 'in_time_zone'
+  end
 end
