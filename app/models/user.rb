@@ -16,6 +16,8 @@ class User < ApplicationRecord
   enum onboarding: { start: 0, contacts: 1, touchpoints: 2, dashboard: 3, finish: 4 },
        _prefix: true
 
+  scope :in_time_zone, ->(time_zones) { where(time_zone: time_zones) }
+
   def contacts?
     contacts.any?
   end
