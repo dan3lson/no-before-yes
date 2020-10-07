@@ -17,8 +17,8 @@ class MondayPrepJob < ApplicationJob
 	def time_zones_with_local_time(hour: SEND_AT_HOUR)
 	  local_time = Time.zone.parse("#{Time.zone.now.hour}:00:00")
 
-	  time_zones = ActiveSupport::TimeZone.all.select do |tz|
-			tz.parse("#{hour}:00") == local_time
+	  time_zones = ActiveSupport::TimeZone.all.select do |time_zone|
+			time_zone.parse("#{hour}:00") == local_time
 		end
 
 		time_zones.map(&:name)
