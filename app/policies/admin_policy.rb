@@ -2,19 +2,17 @@
 
 # AdminPolicy
 class AdminPolicy < Struct.new(:user, :admin)
-	FOUNDERS = %w[danelson@greatawait.com andrea@goforno.com danelson@nobeforeyes.com]
-
   def insights?
-    owner?
+    admin?
   end
 
   def kpis?
-    owner?
+    admin?
   end
 
 	private
 
-	def owner?
-		FOUNDERS.include?(user.email)
+	def admin?
+		user.admin?
 	end
 end
