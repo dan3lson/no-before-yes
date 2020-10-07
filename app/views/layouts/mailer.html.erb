@@ -8,14 +8,7 @@
   <body>
     <div class="main">
       <%= yield %>
-      <footer class="mt-4 text-center">
-        <small>
-          <%= mail_to "hello@nobeforeyes.com" %>
-          &middot;
-          &copy; <%= Date.today.year %>
-          No Before Yes
-        </small>
-      </footer>
+      <%= render 'mailers/footer' %>
     </div>
   </body>
 </html>
