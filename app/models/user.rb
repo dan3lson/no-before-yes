@@ -18,6 +18,8 @@ class User < ApplicationRecord
 
   scope :in_time_zone, ->(time_zones) { where(time_zone: time_zones) }
 
+  before_save :set_free_trial_expires_at
+
   def contacts?
     contacts.any?
   end
@@ -32,13 +34,15 @@ class User < ApplicationRecord
     !!goal
   end
 
-  def free_trial_expires_at
-    created_at + 30.days
-  end
-
   def admin?
     admins = %w[danelson@greatawait.com andrea@goforno.com danelson@nobeforeyes.com]
 
     admins.include?(email)
+  end
+
+  private
+
+  def set_free_trial_expires_at
+    self.free_trial_expires_at = Time.current + 30.days
   end
 end
