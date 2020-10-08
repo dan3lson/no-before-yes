@@ -4,7 +4,7 @@
 class MondayPrepJob < ApplicationJob
 	queue_as :default
 
-	SEND_AT_HOUR = 21
+	SEND_AT_HOUR = 8
 
 	def perform
     users.each do |user|
