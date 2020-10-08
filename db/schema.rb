@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_000621) do
+ActiveRecord::Schema.define(version: 2020_10_08_005303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_000621) do
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128
     t.integer "onboarding", default: 0, null: false
-    t.datetime "free_trial_expires_at"
+    t.datetime "free_trial_expires_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["onboarding"], name: "index_users_on_onboarding"
     t.index ["remember_token"], name: "index_users_on_remember_token"

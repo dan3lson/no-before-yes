@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :blog_posts, dependent: :restrict_with_error
 
 	validates :email, presence: true, uniqueness: { case_sensitive: false }
+	validates :free_trial_expires_at, presence: true
 
   enum onboarding: { start: 0, contacts: 1, touchpoints: 2, dashboard: 3, finish: 4 },
        _prefix: true
