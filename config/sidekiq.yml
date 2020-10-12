@@ -7,4 +7,4 @@
 :schedule:
   MondayPrepJob:
     description: 'Show users what this new week has in store for them'
-    cron: '0 * * * *' # every hour
+    cron: '0 * * * 0' # every hour on Mondays
