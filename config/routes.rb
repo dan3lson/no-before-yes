@@ -59,11 +59,12 @@ Rails.application.routes.draw do
     resources :blog_posts, path: :blog
   end
 
-  # Job Scheduler
-  require 'sidekiq/web'
-  require 'sidekiq-scheduler/web'
 
   constraints Clearance::Constraints::SignedIn.new { |user| user.admin? } do
+    # Job Scheduler
+    require 'sidekiq/web'
+    require 'sidekiq-scheduler/web'
+
     mount Sidekiq::Web => '/sidekiq'
   end
 end
