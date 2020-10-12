@@ -4,8 +4,7 @@
     <p>
       It’s the start of a new week and we want to make sure you hit your goal of
       <%= @user.goal&.target || Goal::DEFAULT_TARGET %> noes. Sign in now to
-      view the contacts you need to reach out to so you can continue to build
-      your relationship with them and eventually get the results you want.
+      view the contacts you need to reach out to.
     </p>
     <%= link_to 'View my Dashboard',
                 dashboard_url,
